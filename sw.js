@@ -1,4 +1,4 @@
-const CACHE = 'cejf-v5';
+const CACHE = 'cejf-v6';
 const ASSETS = ['/Cejf/', '/Cejf/index.html', '/Cejf/manifest.json'];
 
 self.addEventListener('install', e => {
