@@ -83,7 +83,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.5;-
 .brand-mode{font-size:10px;color:var(--text4);margin-top:2px;font-weight:500;letter-spacing:0.8px}
 .hdr-r{display:flex;align-items:center;gap:7px}
 .mode-pill{display:flex;background:var(--bg3);border-radius:20px;padding:3px;gap:2px}
-.mode-pill button{padding:5px 12px;border:none;border-radius:16px;font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;color:var(--text3);background:none;transition:all 0.2s}
+.mode-pill button{padding:5px 9px;border:none;border-radius:16px;font-family:inherit;font-size:10px;font-weight:600;letter-spacing:0.2px;cursor:pointer;color:var(--text3);background:none;transition:all 0.2s;white-space:nowrap}
 .mode-pill button.on{background:var(--surface);color:var(--text);box-shadow:0 1px 4px rgba(0,0,0,0.3)}
 .icon-btn{width:32px;height:32px;border:1px solid var(--border);border-radius:9px;background:var(--bg2);color:var(--text3);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all 0.15s}
 .icon-btn:active{transform:scale(0.92)}
@@ -108,6 +108,81 @@ body{font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.5;-
 /* ── COFFEE CARD ── */
 /* Compact coffee bar */
 .coffee-bar{display:flex;align-items:center;gap:10px;padding:9px 14px;background:var(--bg2);border-bottom:1px solid var(--border);cursor:pointer;transition:background 0.15s}
+/* Dial-in compact status chip */
+.di-chip{margin:10px 14px 0;display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--gold-soft);border:1px solid var(--gold-dim);border-radius:var(--r-sm);cursor:pointer;transition:all 0.15s}
+.di-chip:active{transform:scale(0.99)}
+.di-chip-ico{font-size:14px}
+.di-chip-txt{flex:1;font-size:12px;color:var(--text2);line-height:1.4}
+.di-chip-txt b{color:var(--gold);font-weight:600}
+.di-chip-arr{color:var(--gold);font-size:16px}
+.di-chip.done{background:rgba(90,158,104,0.1);border-color:rgba(90,158,104,0.4)}
+.di-chip.done .di-chip-txt b{color:var(--green)}
+.di-chip.done .di-chip-arr{color:var(--green)}
+/* Dial-in popup */
+.di-popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;animation:diFade 0.18s ease}
+@keyframes diFade{from{opacity:0}to{opacity:1}}
+.di-popup{background:var(--bg2);border:1px solid var(--gold-dim);border-radius:var(--r);max-width:340px;width:100%;overflow:hidden;animation:diPop 0.22s cubic-bezier(0.34,1.4,0.64,1)}
+@keyframes diPop{from{transform:scale(0.92);opacity:0}to{transform:scale(1);opacity:1}}
+.di-pop-head{padding:16px 18px 4px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.di-pop-title{font-size:15px;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:7px}
+.di-pop-conf{font-size:9px;font-weight:600;padding:2px 7px;border-radius:10px;letter-spacing:0.5px;text-transform:uppercase}
+.di-pop-conf.high{background:rgba(90,158,104,0.15);color:var(--green)}
+.di-pop-conf.medium{background:rgba(192,136,56,0.15);color:var(--amber)}
+.di-pop-conf.low{background:var(--bg3);color:var(--text3)}
+.di-pop-conf.saved{background:var(--gold-soft);color:var(--gold)}
+.di-pop-sub{padding:0 18px 12px;font-size:12px;color:var(--text3);line-height:1.5}
+.di-pop-targets{padding:0 18px 14px;display:flex;gap:8px}
+.di-pop-box{flex:1;background:var(--bg3);border-radius:var(--r-sm);padding:11px 6px;text-align:center}
+.di-pop-val{font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--gold);line-height:1}
+.di-pop-lbl{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:0.5px;margin-top:4px}
+.di-pop-reasons{padding:0 18px 14px;font-size:11px;color:var(--text3);line-height:1.7}
+.di-pop-reason{display:flex;gap:5px}
+.di-pop-reason::before{content:'·';color:var(--gold)}
+.di-pop-actions{display:flex;gap:8px;padding:0 18px 18px}
+.di-pop-btn{flex:1;padding:12px;border-radius:var(--r-sm);font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;border:1px solid var(--border2);background:var(--bg3);color:var(--text2);transition:all 0.15s}
+.di-pop-btn.primary{background:linear-gradient(135deg,var(--gold),var(--gold-dim));border-color:var(--gold);color:#1a0e08;box-shadow:0 2px 10px rgba(197,102,61,0.25)}
+.di-pop-btn:active{transform:scale(0.98)}
+/* Maintenance reminders */
+.mt-card{margin:14px 0 0;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:14px}
+.mt-title{font-family:'Fraunces',serif;font-size:17px;font-weight:500;color:var(--text);margin-bottom:2px}
+.mt-sub{font-size:11px;color:var(--text3);line-height:1.6;margin-bottom:6px}
+.mt-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--border)}
+.mt-ico{font-size:18px;filter:saturate(0.5)}
+.mt-mid{flex:1;min-width:0}
+.mt-name{font-size:13px;font-weight:600;color:var(--text)}
+.mt-status{font-size:11px;margin-top:1px;color:var(--text3)}
+.mt-status.ok{color:var(--green)}
+.mt-status.soon{color:var(--amber)}
+.mt-status.over{color:var(--red);font-weight:600}
+.mt-note{font-size:10px;color:var(--text4);margin-top:2px;line-height:1.5}
+.mt-btn{padding:8px 14px;border-radius:var(--r-sm);border:1px solid var(--gold-dim);background:var(--gold-soft);color:var(--gold);font-family:inherit;font-size:11px;font-weight:700;cursor:pointer;flex-shrink:0}
+.mt-btn:active{transform:scale(0.96)}
+/* Diagnosis v2 — unified priority list */
+.dx-wrap{margin-top:10px}
+.dx-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:8px}
+.dx-tastes{font-size:11px;font-weight:600;display:flex;gap:9px;flex-wrap:wrap;justify-content:flex-end}
+.dx-strip{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:8px}
+.dx-card{position:relative;background:var(--bg2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:10px 12px;cursor:pointer;transition:all .15s}
+.dx-card:active{transform:scale(0.99)}
+.dx-k{font-size:9px;font-weight:700;letter-spacing:1.2px;color:var(--text4)}
+.dx-dir{font-family:'Fraunces',serif;font-size:17px;font-weight:600;margin-top:3px;line-height:1.1}
+.dx-val{font-size:11px;color:var(--text3);margin-top:2px;font-variant-numeric:tabular-nums}
+.dx-chev{position:absolute;top:9px;right:10px;color:var(--text4);font-size:12px;transition:transform .2s}
+.dx-card.open .dx-chev{transform:rotate(90deg)}
+.dx-why{display:none;font-size:11px;color:var(--text3);line-height:1.6;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
+.dx-card.open .dx-why{display:block}
+.dx-alert{display:flex;gap:7px;align-items:flex-start;font-size:11px;color:var(--amber);background:rgba(192,136,56,0.08);border:1px solid rgba(192,136,56,0.22);border-radius:var(--r-sm);padding:8px 11px;margin-bottom:8px;line-height:1.5}
+.dx-list{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-sm);overflow:hidden}
+.dx-row{border-top:1px solid var(--border)}
+.dx-row:first-child{border-top:none}
+.dx-row-head{display:flex;align-items:center;gap:9px;width:100%;padding:11px 12px;background:none;border:none;cursor:pointer;font-family:inherit;text-align:left}
+.dx-num{font-size:10px;font-weight:700;color:var(--text4);min-width:12px;font-variant-numeric:tabular-nums}
+.dx-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.dx-row-title{flex:1;font-size:12px;font-weight:500;color:var(--text2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dx-rchev{color:var(--text4);font-size:13px;transition:transform .2s;flex-shrink:0}
+.dx-row.open .dx-rchev{transform:rotate(90deg)}
+.dx-row-detail{display:none;padding:0 12px 12px 39px;font-size:11.5px;color:var(--text3);line-height:1.65}
+.dx-row.open .dx-row-detail{display:block}
 .coffee-bar:active{background:var(--bg3)}
 .cb-ico{font-size:20px;flex-shrink:0}
 .cb-body{flex:1;min-width:0}
@@ -144,11 +219,11 @@ body{font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.5;-
 .params-grid{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
 .params-row-top{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .params-row-bot{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.p-chip{display:flex;flex-direction:column;align-items:center;padding:10px 6px 8px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:all 0.15s;position:relative;overflow:hidden}
+.p-chip{display:flex;flex-direction:column;align-items:center;padding:11px 7px 9px;background:var(--bg2);border:none;border-radius:11px;cursor:pointer;transition:all 0.15s;position:relative;overflow:hidden}
 .p-chip.primary{padding:13px 6px 10px;background:var(--bg2);border-color:var(--border)}
 .p-chip::after{content:'↕';position:absolute;top:4px;right:5px;font-size:8px;color:var(--text4);opacity:0;transition:opacity 0.15s}
 .p-chip:hover::after{opacity:0.8}
-.p-chip:hover,.p-chip:active{border-color:var(--gold-dim);background:var(--bg3)}
+.p-chip:hover,.p-chip:active{background:var(--bg3)}
 .p-chip-val{font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:var(--gold);line-height:1;font-variant-numeric:tabular-nums}
 .p-chip.primary .p-chip-val{font-size:20px;font-weight:600;color:var(--gold)}
 .p-chip-lbl{font-size:9px;color:var(--text4);font-weight:500;letter-spacing:0.5px;margin-top:3px;text-transform:uppercase}
@@ -178,8 +253,8 @@ body{font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.5;-
 /* ── TASTE GRID ── */
 .taste-lbl{font-size:11px;font-weight:600;color:var(--text3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;user-select:none}
 .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:14px}
-.tb{display:flex;flex-direction:column;align-items:center;gap:4px;padding:13px 6px;border:1.5px solid var(--border);border-radius:var(--r);background:var(--bg2);cursor:pointer;font-family:inherit;transition:all 0.18s;position:relative}
-.tb.on{border-color:var(--gold)}
+.tb{display:flex;flex-direction:column;align-items:center;gap:4px;padding:14px 7px;border:none;border-radius:var(--r);background:var(--bg2);cursor:pointer;font-family:inherit;transition:all 0.18s;position:relative}
+.tb.on{}
 .tb:active{transform:scale(0.97)}
 .tb-ico{font-size:20px;line-height:1;pointer-events:none}
 .tb-lbl{font-size:10px;font-weight:500;color:var(--text3);text-align:center;line-height:1.3;pointer-events:none;user-select:none}
@@ -518,6 +593,77 @@ body{font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.5;-
 .grinder-note{font-size:11px;color:var(--text4);padding:9px 11px;background:var(--bg3);border-radius:var(--r-sm);line-height:1.7;margin-top:4px}
 
 input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+
+/* ── Session v3: editorial header, drink pills, refined log ── */
+.coffee-bar{display:flex;align-items:center;gap:10px;padding:15px 16px 13px;background:var(--bg);border-bottom:1px solid var(--border)}
+.coffee-bar:active{background:var(--bg2)}
+.cb-name{font-family:'Fraunces',serif;font-size:19px;font-weight:500;color:var(--text);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:0.1px}
+.cb-name.placeholder{color:var(--text3);font-style:italic;font-weight:400}
+.cb-detail{font-size:9px;font-weight:600;color:var(--text4);letter-spacing:1.4px;text-transform:uppercase;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cb-status{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text3);margin-top:6px;cursor:pointer;width:fit-content}
+.cb-status.done{color:var(--text3)}
+.cb-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;box-shadow:0 0 6px currentColor;opacity:0.9}
+.drink-pills{display:flex;gap:6px;padding:0 14px 2px;overflow-x:auto;scrollbar-width:none}
+.drink-pills::-webkit-scrollbar{display:none}
+.drink-pill{flex-shrink:0;padding:7px 13px;border-radius:18px;border:1px solid var(--border2);background:var(--bg2);color:var(--text3);font-family:inherit;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s}
+.drink-pill:active{transform:scale(0.97)}
+.drink-pill.on{border-color:var(--gold-dim);background:var(--gold-soft);color:var(--gold)}
+.milk-note{font-size:10px;color:var(--text4);padding:6px 16px 0;font-style:italic}
+.log-btn{letter-spacing:2px}
+.log-btn.ready{background:linear-gradient(135deg,var(--gold),var(--gold-dim));box-shadow:0 4px 18px rgba(197,102,61,0.22)}
+.session-label{letter-spacing:1.8px}
+
+/* ── v4 surfaces: borderless, soft, animated ── */
+.p-chip{border-color:transparent}
+.p-chip:hover,.p-chip:active{border-color:transparent;background:var(--bg3)}
+.tb{border-color:transparent}
+.tb.on{border-color:transparent}
+.drink-pill{border-color:transparent}
+.drink-pill.on{border-color:transparent}
+.dx-card{border-color:transparent}
+.dx-list{border-color:transparent}
+.dx-row{border-top-color:var(--border)}
+@keyframes dxIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes dxPop{from{opacity:0;transform:translateY(8px) scale(0.96)}to{opacity:1;transform:none}}
+.dx-wrap{animation:dxIn .3s ease both}
+.dx-verdict{font-family:'Fraunces',serif;font-style:italic;font-size:15px;font-weight:500;line-height:1.45;padding:2px 0 10px;animation:dxPop .4s .05s cubic-bezier(.34,1.4,.64,1) both}
+.dx-strip .dx-card{animation:dxPop .45s cubic-bezier(.34,1.5,.64,1) both}
+.dx-strip .dx-card:nth-child(1){animation-delay:.08s}
+.dx-strip .dx-card:nth-child(2){animation-delay:.15s}
+.dx-alert{animation:dxPop .35s .2s ease both}
+.dx-row{animation:dxPop .35s ease both}
+/* Milk panel */
+.milk-row{display:flex;gap:5px;padding:8px 14px 0;overflow-x:auto;scrollbar-width:none}
+.milk-row::-webkit-scrollbar{display:none}
+.milk-pill{flex-shrink:0;padding:5px 11px;border-radius:14px;border:1px solid transparent;background:var(--bg2);color:var(--text4);font-family:inherit;font-size:10px;font-weight:600;cursor:pointer;transition:all .15s}
+.milk-pill.on{background:rgba(90,143,184,0.12);color:var(--blue)}
+.milk-hint{font-size:10px;color:var(--text4);padding:6px 16px 0;font-style:italic;line-height:1.5}
+
+/* Recipe presets */
+.rc-pills{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.rc-pills::-webkit-scrollbar{display:none}
+.rc-pill{flex-shrink:0;padding:6px 12px;border-radius:16px;border:none;background:var(--bg3);color:var(--text3);font-family:inherit;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s}
+.rc-pill.on{background:var(--gold-soft);color:var(--gold)}
+.rc-desc{font-size:10px;color:var(--text4);font-style:italic;line-height:1.5;padding:6px 2px 4px}
+
+/* Modern-light contextual hint in dial-in popup */
+.di-mh{margin:0 18px 14px;padding:10px 12px;background:var(--gold-soft);border-radius:var(--r-sm);font-size:10.5px;color:var(--text3);line-height:1.55;display:flex;flex-direction:column;gap:8px;animation:dxPop .35s .1s ease both}
+.di-mh b{color:var(--gold)}
+.di-mh-btn{align-self:flex-start;padding:6px 13px;border:none;border-radius:14px;background:var(--gold);color:#1a0e08;font-family:inherit;font-size:10.5px;font-weight:700;cursor:pointer}
+.di-mh-btn:active{transform:scale(0.97)}
+
+/* Recipe picker inside dial-in popup */
+.di-rc{padding:2px 18px 10px}
+.di-rc-lbl{font-size:9px;font-weight:700;letter-spacing:1.2px;color:var(--text4);margin-bottom:6px;text-transform:uppercase}
+.di-rc .rc-pills{padding:0}
+.di-rc .rc-pill{font-size:10.5px;padding:5px 11px}
+
+/* Turkish mode */
+.tk-desc{font-size:11px;color:var(--text4);font-style:italic;line-height:1.55;padding:7px 2px 4px}
+.tk-guide-btn{margin:2px 0 6px;padding:9px 14px;width:100%;border:none;border-radius:var(--r-sm);background:var(--gold-soft);color:var(--gold);font-family:inherit;font-size:12px;font-weight:700;cursor:pointer}
+.tk-guide-btn:active{transform:scale(0.99)}
+.tk-steps{margin:0;padding-left:20px;color:var(--text2)}
+.tk-steps li{font-size:12.5px;line-height:1.6;margin-bottom:9px;padding-left:3px}
 </style>
 </head>
 <body>
@@ -565,6 +711,7 @@ input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
           <option value="fellow_ode">Fellow Ode</option>
           <option value="timemore_c3">Timemore C3</option>
           <option value="other_grinder">Other grinder</option>
+          <option value="nogrinder">No grinder / pre-ground</option>
         </select></div>
       </div>
       <button class="ob-cta primary" onclick="obNext()">Continue →</button>
@@ -637,19 +784,18 @@ input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
   <div class="hdr">
     <div class="brand">
       <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Dark circle background -->
   <circle cx="17" cy="17" r="16" fill="#1a0e08"/>
-  <circle cx="17" cy="17" r="16" fill="none" stroke="var(--gold)" stroke-width="1.2"/>
-  <!-- The C letterform -->
-  <text x="18.5" y="23" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-weight="700" fill="var(--gold)" letter-spacing="0">C</text>
-  <!-- Coffee bean replacing the acute accent — tiny oval with centre crease -->
-  <ellipse cx="20" cy="8.5" rx="3" ry="2" fill="var(--gold)" opacity="0.9" transform="rotate(-20 20 8.5)"/>
-  <path d="M18.2 8 Q20 9.5 21.8 8.8" stroke="#1a0e08" stroke-width="0.7" fill="none" stroke-linecap="round"/>
+  <circle cx="17" cy="17" r="16" fill="none" stroke="var(--gold)" stroke-width="1" opacity="0.55"/>
+  <text x="15.8" y="25" text-anchor="middle" font-family="Georgia,serif" font-size="19" font-weight="700" fill="var(--gold)">C</text>
+  <g transform="translate(22.5,9.5) rotate(-36)">
+    <ellipse cx="0" cy="0" rx="4" ry="2.4" fill="var(--gold)"/>
+    <path d="M -2.8 0.6 Q 0 -1.4 2.8 0.6" stroke="#1a0e08" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+  </g>
 </svg>
       <div><div class="brand-name">Ćejf</div><div class="brand-mode" id="mode-lbl">Espresso</div></div>
     </div>
     <div class="hdr-r">
-      <div class="mode-pill"><button class="on" id="mode-esp" onclick="setMode('espresso')">☕</button><button id="mode-po" onclick="setMode('pourover')">🫗</button></div>
+      <div class="mode-pill"><button class="on" id="mode-esp" onclick="setMode('espresso')">Espresso</button><button id="mode-po" onclick="setMode('pourover')">Filter</button></div>
       <button id="quick-toggle-btn" onclick="toggleQuickMode()" style="padding:4px 10px;border:1px solid var(--border2);border-radius:12px;background:none;color:var(--text4);font-family:inherit;font-size:10px;font-weight:600;cursor:pointer;letter-spacing:0.3px;transition:all 0.2s">FULL</button>
       <button class="icon-btn" onclick="toggleTheme()" id="theme-btn">🌙</button>
     </div>
@@ -661,18 +807,21 @@ input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
     <div class="view active" id="view-session">
       <!-- Coffee bar — compact with last shot on right -->
       <div class="coffee-bar" id="coffee-card" onclick="openCoffeeSheet()">
-        <div class="cb-ico" id="cc-ico">🫘</div>
         <div class="cb-body">
-          <div class="cb-name" id="cc-name">Set up your coffee</div>
+          <div class="cb-name" id="cc-name">Select your beans</div>
           <div class="cb-detail" id="cc-detail" style="display:none"></div>
-          <div class="cc-best" id="cc-best" style="display:none"></div>
+          <div class="cb-status" id="cb-status" style="display:none"></div>
         </div>
         <div class="cb-last" id="cb-last" style="display:none"></div>
         <div class="cb-arr">›</div>
       </div>
+      <!-- Dial-in popup modal -->
+      <div id="dialin-popup" class="di-popup-overlay" style="display:none" onclick="if(event.target===this)dismissDialInPopup()">
+        <div class="di-popup" id="dialin-popup-card"></div>
+      </div>
 
       <!-- Params -->
-      <div class="session-label">Shot parameters</div>
+      <div style="height:8px"></div>
       <div class="params-grid" id="params-strip">
         <div class="params-row-top">
           <div class="p-chip primary" onclick="openParamsSheet()"><div class="p-chip-val" id="chip-dose">18g</div><div class="p-chip-lbl">Dose</div></div>
@@ -688,39 +837,11 @@ input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
           <div class="p-chip" onclick="openParamsSheet()"><div class="p-chip-val" id="chip-ratio">1:2.0</div><div class="p-chip-lbl">Ratio</div></div>
           <div class="p-chip" onclick="openParamsSheet()"><div class="p-chip-val" id="chip-grind">1.0.0</div><div class="p-chip-lbl">Grind</div></div>
           <div class="p-chip" onclick="openParamsSheet()"><div class="p-chip-val" id="chip-temp">93°C</div><div class="p-chip-lbl">Temp</div></div>
-          <div class="p-chip" onclick="openParamsSheet()"><div class="p-chip-val" id="chip-pressure">9 bar</div><div class="p-chip-lbl">Pressure</div></div>
+          <div class="p-chip" data-esp-only onclick="openParamsSheet()"><div class="p-chip-val" id="chip-pressure">9 bar</div><div class="p-chip-lbl">Pressure</div></div>
         </div>
       </div>
 
-      <div class="session-label" style="margin-top:4px">Drink type</div>
-      <div class="drink-circles" id="drink-circles">
-        <button class="drink-circle on" id="dp-espresso" onclick="setDrinkType('espresso')" title="Espresso">
-          <div class="circle-wrap"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="18" cy="26" rx="8" ry="3" fill="currentColor" opacity="0.2"/><rect x="11" y="10" width="14" height="16" rx="3" stroke="currentColor" stroke-width="2" fill="none"/><path d="M25 14h3a3 3 0 010 6h-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/><line x1="18" y1="7" x2="18" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
-          <span>Espresso</span>
-        </button>
-        <button class="drink-circle" id="dp-cappuccino" onclick="setDrinkType('cappuccino')" title="Cappuccino">
-          <div class="circle-wrap"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="18" cy="27" rx="10" ry="3" fill="currentColor" opacity="0.15"/><rect x="9" y="14" width="18" height="13" rx="3" stroke="currentColor" stroke-width="2" fill="none"/><path d="M27 17h2a3 3 0 010 6h-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/><ellipse cx="18" cy="14" rx="9" ry="5" stroke="currentColor" stroke-width="2" fill="none"/><ellipse cx="18" cy="13" rx="5" ry="3" fill="currentColor" opacity="0.25"/></svg></div>
-          <span>Cappuccino</span>
-        </button>
-        <button class="drink-circle" id="dp-flat_white" onclick="setDrinkType('flat_white')" title="Flat White">
-          <div class="circle-wrap"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="18" cy="27" rx="10" ry="3" fill="currentColor" opacity="0.15"/><rect x="9" y="13" width="18" height="14" rx="3" stroke="currentColor" stroke-width="2" fill="none"/><path d="M27 16h2a3 3 0 010 6h-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/><path d="M12 13 Q18 10 24 13" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M12 13 Q18 16 24 13" stroke="currentColor" stroke-width="1" fill="currentColor" opacity="0.2"/></svg></div>
-          <span>Flat White</span>
-        </button>
-        <button class="drink-circle" id="dp-macchiato" onclick="setDrinkType('macchiato')" title="Macchiato">
-          <div class="circle-wrap"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="18" cy="26" rx="7" ry="2.5" fill="currentColor" opacity="0.2"/><rect x="12" y="11" width="12" height="15" rx="2.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M24 14.5h2a2.5 2.5 0 010 5h-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/><circle cx="18" cy="13" r="3" fill="currentColor" opacity="0.3"/><circle cx="18" cy="13" r="1.5" fill="currentColor" opacity="0.5"/></svg></div>
-          <span>Macchiato</span>
-        </button>
-        <button class="drink-circle" id="dp-cortado" onclick="setDrinkType('cortado')" title="Cortado">
-          <div class="circle-wrap"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="18" cy="27" rx="8" ry="2.5" fill="currentColor" opacity="0.15"/><rect x="11" y="12" width="14" height="15" rx="2.5" stroke="currentColor" stroke-width="2" fill="none"/><path d="M25 15h2a2.5 2.5 0 010 5h-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/><line x1="14" y1="16" x2="22" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/><line x1="14" y1="19" x2="22" y2="19" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.3"/></svg></div>
-          <span>Cortado</span>
-        </button>
-        <button class="drink-circle" id="dp-other_drink" onclick="setDrinkType('other_drink')" title="Other">
-          <div class="circle-wrap"><svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="9" stroke="currentColor" stroke-width="2" fill="none"/><text x="18" y="23" text-anchor="middle" font-size="13" fill="currentColor" font-family="serif">?</text></svg></div>
-          <span>Other</span>
-        </button>
-      </div>
-      <div id="milk-note" style="display:none;font-size:11px;color:var(--text4);margin:-2px 14px 8px;padding:6px 10px;background:var(--bg3);border-radius:var(--r-sm)">☕ With milk — taste notes are optional</div>
-      <div class="session-label" style="margin-top:4px">How did it taste? <span style="font-size:10px;color:var(--text4);font-weight:400">Select all that apply</span></div>
+      <div class="session-label" style="margin-top:4px">Taste</div>
       <div class="tgrid" id="tgrid"></div>
 
       <!-- Intensity — hidden until user taps "adjust" -->
@@ -752,6 +873,23 @@ input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
 
       <!-- Notes + Log -->
       <!-- Drink type circles -->
+
+      <div id="drink-sec">
+        <div class="session-label">Drink</div>
+        <div class="drink-pills" id="drink-circles">
+          <button class="drink-pill on" id="dp-espresso" onclick="setDrinkType('espresso')">Espresso</button>
+          <button class="drink-pill" id="dp-americano" onclick="setDrinkType('americano')">Americano</button>
+          <button class="drink-pill" id="dp-cappuccino" onclick="setDrinkType('cappuccino')">Cappuccino</button>
+          <button class="drink-pill" id="dp-flat_white" onclick="setDrinkType('flat_white')">Flat white</button>
+          <button class="drink-pill" id="dp-macchiato" onclick="setDrinkType('macchiato')">Macchiato</button>
+          <button class="drink-pill" id="dp-cortado" onclick="setDrinkType('cortado')">Cortado</button>
+          <button class="drink-pill" id="dp-other" onclick="setDrinkType('other')">Other</button>
+        </div>
+        <div id="milk-panel" style="display:none">
+          <div class="milk-row" id="milk-pills"></div>
+          <div class="milk-hint" id="milk-hint"></div>
+        </div>
+      </div>
 
       <textarea class="notes-inp" id="notes" placeholder="Describe your shot…"></textarea>
       <div style="display:flex;gap:8px;margin-bottom:10px;margin-top:-6px;align-items:center">
@@ -909,6 +1047,18 @@ input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
           <div id="tip-interest-note" style="font-size:11px;color:var(--text4);text-align:center;min-height:16px;margin-top:6px"></div>
         </div>
 
+        <!-- Your data -->
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-bottom:14px">
+          <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:500;color:var(--text);margin-bottom:4px">Your data 🔒</div>
+          <div style="font-size:11px;color:var(--text3);line-height:1.7;margin-bottom:12px">Everything lives on this device only. Export a backup file to keep your shots safe or move them to a new phone.</div>
+          <div style="display:flex;gap:8px">
+            <button onclick="exportData()" style="flex:1;padding:11px 6px;border:1px solid var(--gold-dim);border-radius:var(--r-sm);background:var(--gold-soft);color:var(--gold);font-family:inherit;font-size:12px;font-weight:700;cursor:pointer">⬇ Export backup</button>
+            <button onclick="document.getElementById('import-file').click()" style="flex:1;padding:11px 6px;border:1px solid var(--border2);border-radius:var(--r-sm);background:var(--bg3);color:var(--text2);font-family:inherit;font-size:12px;font-weight:600;cursor:pointer">⬆ Import</button>
+            <input type="file" id="import-file" accept="application/json,.json" style="display:none" onchange="importData(event)">
+          </div>
+          <div style="font-size:9px;color:var(--text4);margin-top:10px;text-align:center;letter-spacing:0.5px">ĆEJF v2.0 · ADAPTIVE ENGINE</div>
+        </div>
+
         <!-- Feedback form -->
         <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-bottom:14px">
           <div style="font-family:'Fraunces',serif;font-size:17px;font-weight:500;color:var(--text);margin-bottom:4px">Send feedback</div>
@@ -927,7 +1077,7 @@ input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
             <div style="font-size:12px;color:var(--text3);display:flex;gap:9px"><span style="color:var(--green);flex-shrink:0">✓</span>Shot logging, history, statistics</div>
             <div style="font-size:12px;color:var(--text3);display:flex;gap:9px"><span style="color:var(--green);flex-shrink:0">✓</span>Machine setup, maintenance reminders</div>
             <div style="font-size:12px;color:var(--text3);display:flex;gap:9px"><span style="color:var(--green);flex-shrink:0">✓</span>Bean profiles, flavour wheel, bag history</div>
-            <div style="font-size:12px;color:var(--text3);display:flex;gap:9px"><span style="color:var(--green);flex-shrink:0">✓</span>Puck diagnostics, pour-over mode with recipes</div>
+            <div style="font-size:12px;color:var(--text3);display:flex;gap:9px"><span style="color:var(--green);flex-shrink:0">✓</span>Filter & Turkish modes, each with recipes & diagnostics</div>
             <div style="font-size:12px;color:var(--text3);display:flex;gap:9px"><span style="color:var(--green);flex-shrink:0">✓</span>AI label scanner — point camera at any coffee bag</div>
             <div style="font-size:12px;color:var(--text3);display:flex;gap:9px"><span style="color:var(--green);flex-shrink:0">✓</span>AI shot notes interpretation</div>
             <div style="font-size:12px;color:var(--text3);display:flex;gap:9px"><span style="color:var(--green);flex-shrink:0">✓</span>Your data stays on your device — no account, no cloud</div>
@@ -937,7 +1087,7 @@ input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
         <!-- About -->
         <div style="padding:14px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);margin-bottom:14px">
           <div style="font-size:13px;font-weight:600;color:var(--text);margin-bottom:6px">About Ćejf</div>
-          <div style="font-size:12px;color:var(--text3);line-height:1.8">Ćejf (pronounced "chayf") is a Bosnian word for the slow, pleasurable enjoyment of something — particularly coffee. Built by a home barista frustrated by apps that only logged shots without explaining why they tasted wrong. Covers espresso and pour-over. Version 4. All feedback welcome.</div>
+          <div style="font-size:12px;color:var(--text3);line-height:1.8">Ćejf (pronounced "chayf") is a Bosnian word for the slow, pleasurable enjoyment of something — particularly coffee. Built by a home barista frustrated by apps that only logged shots without explaining why they tasted wrong. Covers espresso, filter (pour over &amp; immersion), and Turkish coffee. All feedback welcome.</div>
           <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
             <a href="https://github.com/bebabena/Ceif" target="_blank" style="font-size:11px;color:var(--gold);text-decoration:none;padding:5px 11px;border:1px solid var(--gold-dim);border-radius:20px">GitHub</a>
             <a href="https://www.reddit.com/r/espresso" target="_blank" style="font-size:11px;color:var(--text4);text-decoration:none;padding:5px 11px;border:1px solid var(--border2);border-radius:20px">r/espresso</a>
@@ -983,6 +1133,7 @@ input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
 <div class="sheet" id="params-sheet">
   <div class="sheet-handle"></div>
   <div class="sheet-hdr"><div class="sheet-title" id="params-sheet-title">Shot Parameters</div><button class="sheet-close" onclick="closeParams()">×</button></div>
+  <div id="recipe-row" style="display:none;padding:2px 18px 0"></div>
   <div class="sheet-body" id="params-sheet-body"></div>
 </div>
 
@@ -1075,10 +1226,10 @@ input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
 
 <script>
 // ══ STATE ════════════════════════════════════════════════════════════════════
-const P={dose:18,yield:36,time:28,temp:93,grind:90,tamp:'medium',distrib:'good',basket:18,preinf:3,prepause:3,pressure:9,opvActivated:false,grindType:'own'};
-const PO={dose:15,water:250,temp:93,grind:225,bloomTime:45,totalTime:210,brewer:'v60',filter:'paper',recipe:'standard'};
+const P={dose:18,yield:36,time:28,temp:93,grind:90,tamp:'medium',distrib:'good',basket:18,preinf:3,prepause:3,pressure:9,opvActivated:false,recipe:'standard',grindType:'own'};
+const PO={dose:15,water:250,temp:93,grind:225,bloomTime:45,totalTime:210,brewer:'v60',filter:'paper',recipe:'standard',sugar:0};
 const M={opv:9};
-const C={name:'',country:'',region:'',variety:'',varieties:[],roast:'medium',process:'washed',daysOld:null,altitude:'',flavorNotes:[],bestGrind:''};
+const C={name:'',country:'',region:'',variety:'',varieties:[],roast:'medium',process:'washed',daysOld:null,altitude:'',flavorNotes:[],bestGrind:'',dialedIn:false,dialInShots:[]};
 // Machine setup — permanent rig profile
 const RIG={
   machine:'ascaso_duo',grinder:'jmax_s',
@@ -1115,6 +1266,8 @@ function restore(){
   const s=ld('shots',null);if(s)shots=s;
   const bg=ld('bags',null);if(bg)bags=bg;
   Object.assign(P,ld('P',{})||{});
+  if(!P.recipe)P.recipe='standard';
+
   Object.assign(PO,ld('PO',{})||{});
   Object.assign(M,ld('M',{})||{});
   Object.assign(C,ld('C',{})||{});
@@ -1173,10 +1326,17 @@ function setMode(m){
   brewMode=m;
   document.getElementById('mode-esp').classList.toggle('on',m==='espresso');
   document.getElementById('mode-po').classList.toggle('on',m==='pourover');
-  document.getElementById('mode-lbl').textContent=m==='espresso'?'Espresso':'Pour Over';
-  document.getElementById('log-btn').textContent=m==='espresso'?'LOG THIS SHOT':'LOG THIS BREW';
+  const isTk=(m==='pourover'&&PO.brewer==='turkish');
+  document.getElementById('mode-lbl').textContent=m==='espresso'?'Espresso':(isTk?'Turkish':'Filter');
+  document.getElementById('log-btn').textContent=m==='espresso'?'LOG THIS SHOT':(isTk?'LOG THIS CUP':'LOG THIS BREW');
   renderTasteGrid();rebuildGrindSlider();if(primaryTaste())renderDiag();persist();
   updateChips();
+  const ds=document.getElementById('drink-sec');if(ds)ds.style.display=m==='espresso'?'':'none';
+  applyModeVisibility(m);
+  renderDialIn();
+}
+function applyModeVisibility(m){
+  document.querySelectorAll('[data-esp-only]').forEach(el=>el.style.display=(m==='espresso')?'':'none');
 }
 
 // ══ SHOT TIMER ══════════════════════════════════════════════════════════════
@@ -1190,7 +1350,8 @@ function timerChipTap(){
     const lbl=document.getElementById('chip-time-lbl');
     if(wrap){
       wrap.classList.remove('running');
-      wrap.classList.add(secs>=22&&secs<=35?'done-ok':'done-fast');
+      const _w=brewMode==='espresso'?curRecipe():{tMin:22,tMax:35};
+      wrap.classList.add(secs>=_w.tMin&&secs<=_w.tMax?'done-ok':'done-fast');
       setTimeout(()=>{wrap.classList.remove('done-ok','done-fast');},2500);
     }
     if(lbl)lbl.textContent='Time';
@@ -1202,6 +1363,11 @@ function timerChipTap(){
     if(slf)slf.style.width=pct+'%';if(slt)slt.style.left=pct+'%';
     renderPuckPicker();
     if(primaryTaste())renderDiag();
+    // If this bag isn't dialed in yet, record this as a dial-in shot
+    const hasCoffee=C.name||C.country;
+    if(hasCoffee&&!C.dialedIn&&brewMode==='espresso'){
+      logDialInShot(secs);
+    }
   } else if(_timerMs>0){
     // Already stopped with a time — reset
     _timerMs=0;
@@ -1251,10 +1417,25 @@ function updateTimerDisplay(secs){
 function updateChips(){
   const mc=MACHINES[RIG.machine];
   const hasTempCtrl=!mc||mc.tempCtrl!==false;
-  const isPreground=RIG.grinder==='other_grinder'&&P.grindType==='preground';
+  const isPreground=(RIG.grinder==='nogrinder'||(RIG.grinder==='other_grinder'&&P.grindType==='preground'));
   const botRow=document.querySelector('.params-row-bot');
   const presChipWrap=document.getElementById('chip-pressure')?.parentElement;
-  if(brewMode==='pourover'){
+  if(brewMode==='pourover'&&PO.brewer==='turkish'){
+    const ratio=(PO.water/PO.dose).toFixed(1);
+    document.getElementById('chip-dose').textContent=PO.dose+'g';
+    document.getElementById('chip-yield').textContent=PO.water+'ml';
+    document.getElementById('chip-ratio').textContent='1:'+ratio;
+    const gc=document.getElementById('chip-grind');if(gc){gc.textContent='Extra-fine';gc.parentElement.style.opacity='1';}
+    document.getElementById('chip-temp').textContent=(PO.sugar>0?PO.sugar+' tsp':'None');
+    if(presChipWrap)presChipWrap.style.display='none';
+    if(botRow)botRow.style.gridTemplateColumns='repeat(3,1fr)';
+    const topRow=document.querySelector('.params-row-top');if(topRow)topRow.style.gridTemplateColumns='repeat(2,1fr)';
+    const tw=document.getElementById('chip-time-wrap');if(tw)tw.style.display='none';
+    const lbls=['Coffee','Water','','Ratio','Grind','Sugar'];
+    document.querySelectorAll('.p-chip-lbl').forEach((el,i)=>{if(lbls[i]!==undefined&&lbls[i]!=='')el.textContent=lbls[i];});
+  } else if(brewMode==='pourover'){
+    const tw=document.getElementById('chip-time-wrap');if(tw)tw.style.display='';
+    const topRow=document.querySelector('.params-row-top');if(topRow)topRow.style.gridTemplateColumns='repeat(3,1fr)';
     const ratio=(PO.water/PO.dose).toFixed(1);
     const mins=Math.floor(PO.totalTime/60),secs=PO.totalTime%60;
     document.getElementById('chip-dose').textContent=PO.dose+'g';
@@ -1268,6 +1449,8 @@ function updateChips(){
     const lbls=['Coffee','Water','Time','Ratio','Grind','Temp'];
     document.querySelectorAll('.p-chip-lbl').forEach((el,i)=>{if(lbls[i])el.textContent=lbls[i];});
   } else {
+    const tw=document.getElementById('chip-time-wrap');if(tw)tw.style.display='';
+    const topRow=document.querySelector('.params-row-top');if(topRow)topRow.style.gridTemplateColumns='repeat(3,1fr)';
     const r=(P.yield/P.dose).toFixed(1);
     document.getElementById('chip-dose').textContent=P.dose+'g';
     document.getElementById('chip-yield').textContent=P.yield+'g';
@@ -1310,12 +1493,12 @@ function updateDialinStrip(){
   if(recent.length<2){strip.style.display='none';return;}
   strip.style.display='flex';
   strip.style.alignItems='center';
-  const tastes=brewMode==='pourover'?TASTES_PO:TASTES_ESP;
+  const tastes=(brewMode==='pourover'&&PO.brewer==='turkish')?TASTES_TK:(brewMode==='pourover'?TASTES_PO:TASTES_ESP);
   // Label shows current bag name or "Recent shots"
   const bagLbl=C.name?C.name:'Recent shots';
   strip.innerHTML=`<div class="dialin-label" style="flex-shrink:0;max-width:60px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${bagLbl}">${bagLbl}</div>`+
   recent.map((s,i)=>{
-    const tList=s.brewMode==='pourover'?TASTES_PO:TASTES_ESP;
+    const tList=(s.brewMode==='pourover'&&s.poBrewer==='turkish')?TASTES_TK:(s.brewMode==='pourover'?TASTES_PO:TASTES_ESP);
     const tObj=tList.find(t=>t.id===s.taste)||{emoji:'☕',color:'var(--text4)',id:s.taste};
     const grindLbl=clicks2lbl(parseFloat(s.grind));
     return`<div class="dialin-dot" title="${tObj.id} · ${grindLbl}">
@@ -1342,7 +1525,7 @@ function saveCurrentBag(){
 }
 function newBag(){
   if(C.name||C.country)saveCurrentBag();
-  Object.assign(C,{name:'',country:'',region:'',variety:'',varieties:[],roast:'medium',process:'washed',daysOld:null,altitude:'',flavorNotes:[],bestGrind:''});
+  Object.assign(C,{name:'',country:'',region:'',variety:'',varieties:[],roast:'medium',process:'washed',daysOld:null,altitude:'',flavorNotes:[],bestGrind:'',dialedIn:false,dialInShots:[]});
   syncCoffeeSheetInputs();updateCoffeeCard();renderBagsList();
   renderCOriginCard();renderCRegionVariety();renderCDensity();updateOriginShortcuts();
   persist();
@@ -1358,6 +1541,13 @@ function loadBag(idx){
     if(existing>=0){bags[existing]={...JSON.parse(JSON.stringify(C)),savedAt:Date.now()};persist();}
   }
   Object.assign(C,JSON.parse(JSON.stringify(b)));
+  if(C.dialedIn===undefined)C.dialedIn=false;
+  if(!Array.isArray(C.dialInShots))C.dialInShots=[];
+  // Auto-advance bean age: add days elapsed since this bag was last saved
+  if(C.daysOld!=null&&C.daysOld!==''&&b.savedAt){
+    const extra=Math.floor((Date.now()-b.savedAt)/86400000);
+    if(extra>0)C.daysOld=Math.min(365,(parseInt(C.daysOld)||0)+extra);
+  }
   syncCoffeeSheetInputs();updateCoffeeCard();renderBagsList();
   renderCOriginCard();renderCRegionVariety();renderCDensity();renderFWSelected();updateOriginShortcuts();
   persist();
@@ -1389,21 +1579,20 @@ function setBestGrindFromCurrent(){
   persist();
 }
 function updateCoffeeCard(){
-  const card=document.getElementById('coffee-card');
   const o=ORIGINS[C.country];
   const hasCoffee=C.name||C.country;
-  const ico=document.getElementById('cc-ico');
   const name=document.getElementById('cc-name');
   const detail=document.getElementById('cc-detail');
-  if(ico){if(o&&o.flag&&o.flag.length<=2){ico.innerHTML='<span class="cc-code" style="font-size:9px;padding:2px 4px">'+o.flag+'</span>';}else{ico.textContent=o?o.flag:'🫘';}}
-  if(name)name.textContent=hasCoffee?(C.name||(o?o.name:'Unknown')):'Set up your coffee';
+  if(name){
+    name.textContent=hasCoffee?(C.name||(o?o.name:'Unknown coffee')):'Select your beans';
+    name.classList.toggle('placeholder',!hasCoffee);
+  }
   if(detail){
-    const parts=[o?.name,C.roast,C.process,C.daysOld?C.daysOld+'d':null].filter(Boolean);
-    if(hasCoffee&&parts.length){detail.textContent=parts.join(' · ');detail.style.display='block';detail.style.fontSize='11px';detail.style.color='var(--text4)';}
+    const parts=[o?o.name:null,C.roast?C.roast.replace('-',' '):null,C.process,(C.daysOld!=null&&C.daysOld!=='')?C.daysOld+'d':null].filter(Boolean);
+    if(hasCoffee&&parts.length){detail.textContent=parts.join('\u2002\u00b7\u2002');detail.style.display='block';}
     else detail.style.display='none';
   }
-  const best=document.getElementById('cc-best');
-  if(best){if(C.bestGrind){best.style.display='block';best.textContent='Best: '+C.bestGrind;}else best.style.display='none';}
+  renderDialIn();
 }
 
 // ══ MACHINES & GRINDERS ══════════════════════════════════════════════════════
@@ -1555,6 +1744,10 @@ const GRINDERS={
     flt:{min:0,max:100,hint:'Filter range'},
     fmt:c=>c.toFixed(1)},
 
+  nogrinder:{name:'No grinder / pre-ground',preground:true,
+    esp:{min:0,max:5,hint:'Choose a grind size below'},
+    flt:{min:0,max:5,hint:'Choose a grind size below'},
+    fmt:c=>['Extra-fine','Fine','Medium-fine','Medium','Medium-coarse','Coarse'][Math.max(0,Math.min(5,Math.round(c)))]},
   custom_grinder:{name:'Custom grinder',
     esp:{min:0,max:100,hint:'Set your espresso range above'},
     flt:{min:0,max:200,hint:'Set your filter range above'},
@@ -1604,6 +1797,96 @@ function flashMachineSaved(){
   toast._t=setTimeout(()=>toast.style.opacity='0',1500);
 }
 // Return effective grinder range (custom overrides default)
+// ══ STARTING POINT ENGINE — recommends grind + yield for a fresh bag ═══════════
+// Positions within the grinder's espresso range based on bean characteristics.
+// More user detail = more precise. Returns {grind, yield, ratio, confidence, reasons}
+function recommendStart(){
+  const g=GRINDERS[RIG.grinder];
+  const espZone=getGrinderRange('esp');
+  const span=espZone.max-espZone.min;
+  // Start at the centre of the espresso zone (a safe neutral point)
+  let pos=0.5; // 0 = finest, 1 = coarsest within zone
+  const reasons=[];
+  let detail=0; // how much info we have → confidence
+
+  // ROAST LEVEL — biggest single factor
+  // Lighter roast = denser bean = needs finer grind (lower pos)
+  // Darker roast = more soluble/brittle = coarser (higher pos)
+  if(C.roast){
+    detail++;
+    if(C.roast==='light'){pos-=0.18;reasons.push('Light roast → finer');}
+    else if(C.roast==='medium-light'){pos-=0.09;reasons.push('Medium-light roast → slightly finer');}
+    else if(C.roast==='medium'){/* neutral */}
+    else if(C.roast==='medium-dark'){pos+=0.09;reasons.push('Medium-dark roast → slightly coarser');}
+    else if(C.roast==='dark'){pos+=0.18;reasons.push('Dark roast → coarser');}
+  }
+
+  // PROCESS — fermentation affects solubility
+  if(C.process){
+    detail++;
+    if(C.process==='natural'){pos+=0.05;reasons.push('Natural process → a touch coarser');}
+    else if(C.process==='anaerobic'){pos+=0.06;reasons.push('Anaerobic → a touch coarser');}
+    else if(C.process==='honey'){pos+=0.03;}
+    // washed = neutral baseline
+  }
+
+  // FRESHNESS — fresh beans (high CO2) resist flow, often need to start coarser
+  // then go finer as they degas over the first week
+  if(C.daysOld!=null){
+    detail++;
+    if(C.daysOld<7){pos+=0.10;reasons.push('Very fresh (<7d) → start coarser, CO₂ still degassing');}
+    else if(C.daysOld<14){pos+=0.04;reasons.push('Fresh → slightly coarser');}
+    else if(C.daysOld>35){pos-=0.06;reasons.push('Older beans → slightly finer');}
+  }
+
+  // ALTITUDE / DENSITY via origin — dense high-grown beans need finer grind
+  const o=ORIGINS[C.country];
+  if(o){
+    detail++;
+    if(o.density==='high'){pos-=0.07;reasons.push((o.name||'Origin')+' is dense → finer');}
+    else if(o.density==='low'){pos+=0.07;reasons.push((o.name||'Origin')+' is soft → coarser');}
+  }
+
+  // VARIETY — some cultivars are notably dense
+  if(C.variety){
+    const denseVarieties=['SL28','SL34','Gesha','Geisha','Bourbon','Pacamara'];
+    const softVarieties=['Catimor','Robusta','Castillo'];
+    if(denseVarieties.some(v=>C.variety.includes(v))){pos-=0.04;detail++;}
+    else if(softVarieties.some(v=>C.variety.includes(v))){pos+=0.04;detail++;}
+  }
+
+  // If user has a saved best-grind for THIS bag, use it directly (highest confidence)
+  const savedBag=bags.find(b=>b.name===C.name&&b.country===C.country&&b.bestGrindClicks);
+  if(savedBag&&savedBag.bestGrindClicks){
+    return{
+      grind:savedBag.bestGrindClicks,
+      yieldRatio:savedBag.bestRatio||2.0,
+      confidence:'saved',
+      reasons:['Using your saved best grind for this bag'],
+      fromSaved:true
+    };
+  }
+
+  // Clamp position and convert to clicks
+  const _rc=curRecipe();
+  if(_rc.grindAdj){pos+=_rc.grindAdj;if(P.recipe!=='standard')reasons.push(_rc.lbl+' recipe → '+(_rc.grindAdj>0?'coarser':'finer'));}
+  pos=Math.max(0.05,Math.min(0.95,pos));
+  const grind=Math.round(espZone.min+pos*span);
+
+  // Confidence based on how much detail we have
+  let confidence='low';
+  if(detail>=4)confidence='high';
+  else if(detail>=2)confidence='medium';
+
+  // Yield: default 1:2 ratio. Lighter roasts often like a touch longer (1:2.2-2.5)
+  let ratio=2.0;
+  if(C.roast==='light'||C.roast==='medium-light')ratio=2.2;
+  if(C.process==='natural'||C.process==='anaerobic')ratio=2.1;
+  if(P.recipe&&P.recipe!=='standard'){ratio=_rc.ratio;reasons.push(_rc.lbl+': 1:'+_rc.ratio+' in '+_rc.tMin+'–'+_rc.tMax+'s');}
+
+  return{grind,yieldRatio:ratio,confidence,reasons,fromSaved:false};
+}
+
 function getGrinderRange(mode){
   const g=GRINDERS[RIG.grinder];
   if(mode==='esp'){
@@ -1617,6 +1900,217 @@ function getGrinderRange(mode){
     max:RIG.grinderFltMax??g?.flt?.max??360,
   };
 }
+
+// ══ DIAL-IN PHASE LOGIC ════════════════════════════════════════════════════
+// Compact, unobtrusive: a small status chip on the session screen, plus a
+// popup that appears once when a fresh bag is set up (or on demand via the chip).
+
+let _dialInPopupSeen={}; // track which bags have shown the popup this session
+
+function renderDialIn(){
+  const st=document.getElementById('cb-status');
+  if(!st)return;
+  const hasCoffee=C.name||C.country;
+  if(brewMode!=='espresso'||!hasCoffee){st.style.display='none';return;}
+  st.style.display='flex';
+  if(C.dialedIn){
+    st.className='cb-status done';
+    st.onclick=e=>{e.stopPropagation();reopenDialIn();};
+    st.innerHTML='<span class="cb-dot" style="background:var(--green)"></span>Dialed in at '+(C.bestGrind||clicks2lbl(P.grind))+'\u2002\u00b7\u2002re-dial';
+    return;
+  }
+  const shots=C.dialInShots||[];
+  st.className='cb-status';
+  st.onclick=e=>{e.stopPropagation();openDialInPopup();};
+  let txt;
+  if(shots.length===0)txt='Suggested start ready\u2002\u00b7\u2002tap';
+  else{
+    const last=shots[shots.length-1];
+    const w=curRecipe();
+    if(last.time>=w.tMin&&last.time<=w.tMax)txt=last.time+'s — in the window · finish';
+    else txt='Last '+last.time+'s '+(last.time<w.tMin?'fast':'slow')+' · next grind';
+  }
+  st.innerHTML='<span class="cb-dot" style="background:var(--gold)"></span>'+txt;
+}
+
+// ADAPTIVE NEXT-STEP MODEL
+// Learns this bean's grind-to-time sensitivity from your logged dial-in shots.
+// One shot: grinder-zone heuristic. Two+ shots at different grinds: measured slope.
+function nextDialInSuggestion(){
+  const shots=C.dialInShots||[];
+  if(!shots.length)return null;
+  const zone=getGrinderRange('esp');
+  const span=Math.max(6,zone.max-zone.min);
+  const RC=curRecipe();
+  const TARGET=Math.round((RC.tMin+RC.tMax)/2);
+  const last=shots[shots.length-1];
+  const flow=(last.yield&&last.time)?last.yield/last.time:null;
+  let clicksPerSec=Math.max(0.3,span/13); // zone heuristic: esp zone spans the 22-35s window
+  let basis='heuristic';
+  for(let i=shots.length-2;i>=0;i--){
+    const a=shots[i];
+    if(a.grind!==last.grind&&a.time!==last.time){
+      const slope=(last.time-a.time)/(last.grind-a.grind); // seconds per click
+      if(isFinite(slope)&&Math.abs(slope)>=0.08&&Math.abs(slope)<=8){
+        clicksPerSec=1/Math.abs(slope);basis='model';
+      }
+      break;
+    }
+  }
+  const inWindow=last.time>=RC.tMin&&last.time<=RC.tMax;
+  const deltaT=TARGET-last.time; // positive = need slower = finer
+  let step=Math.round(Math.abs(deltaT)*clicksPerSec);
+  step=Math.max(1,Math.min(Math.round(span*0.25),step,15));
+  let suggested=last.grind+(deltaT>0?-step:step);
+  suggested=Math.max(zone.min,Math.min(zone.max,Math.round(suggested)));
+  return{last,flow,inWindow,basis,clicksPerSec:Math.round(clicksPerSec*10)/10,
+    step:Math.abs(suggested-last.grind),dir:deltaT>0?'finer':'coarser',suggested,shotNo:shots.length};
+}
+
+function applyDialInSuggestion(g){
+  P.grind=g;persist();updateChips();
+  if(typeof rebuildGrindSlider==='function')rebuildGrindSlider();
+  flashToast('Grind set to '+clicks2lbl(g));
+}
+
+function openDialInPopup(){
+  const overlay=document.getElementById('dialin-popup');
+  const card=document.getElementById('dialin-popup-card');
+  if(!overlay||!card)return;
+  const rec=recommendStart();
+  const shots=C.dialInShots||[];
+  const next=nextDialInSuggestion();
+  const targetYield=Math.round(P.dose*rec.yieldRatio*10)/10;
+  const RCP=curRecipe();
+  const confLabel=rec.confidence==='saved'?'Your setting':rec.confidence+' confidence';
+  const _lr=['light','medium-light'].indexOf(C.roast||'')>=0;
+  const modernHint=(_lr&&(P.recipe||'standard')==='standard')
+    ?`<div class="di-mh"><span>Light roast — <b>Modern light</b> (1:3 in 8–18s, full flow) is usually the easier path. Classical can work too with a capable grinder.</span></div>`
+    :'';
+  const recipePills='<div class="di-rc"><div class="di-rc-lbl">Recipe</div><div class="rc-pills">'
+    +Object.keys(ESP_RECIPES).map(k=>'<button class="rc-pill'+(k===(P.recipe||'standard')?' on':'')+'" onclick="selectRecipe(\''+k+'\');openDialInPopup()">'+ESP_RECIPES[k].lbl+'</button>').join('')
+    +'</div></div>';
+
+  let title='🎯 Suggested start'+(P.recipe&&P.recipe!=='standard'?' · '+RCP.lbl:'');
+  let badge=`<div class="di-pop-conf ${rec.confidence}">${confLabel}</div>`;
+  let guidance='',actions='',grindShown=rec.grind,grindLabel='Start grind';
+
+  if(!next){
+    guidance=rec.fromSaved
+      ?'This is your saved grind for this bag. Pull a shot and time it to confirm.'
+      :'Set this as your starting point, pull a shot, and time it with the Time chip. The engine calibrates to this exact bean with every shot you log.';
+    actions=`<button class="di-pop-btn" onclick="markDialedIn();dismissDialInPopup()">✓ Dialed in</button>
+      <button class="di-pop-btn primary" onclick="applyStartGrind();dismissDialInPopup()">Use this grind</button>`;
+  } else {
+    title=`🎯 Dialing in · shot ${next.shotNo}`;
+    const flowTxt=next.flow?` · ${next.flow.toFixed(1)} g/s flow`:'';
+    if(next.inWindow){
+      badge=`<div class="di-pop-conf high">In the window</div>`;
+      guidance=`Last shot ${next.last.time}s${flowTxt} — right in the target window. Taste it: balanced → tap Dialed in. Off-flavours → select them below and let diagnostics fine-tune.`;
+      grindShown=next.last.grind;grindLabel='Current grind';
+      actions=`<button class="di-pop-btn" onclick="dismissDialInPopup()">Keep tuning</button>
+        <button class="di-pop-btn primary" onclick="markDialedIn();dismissDialInPopup()">✓ Dialed in</button>`;
+    } else {
+      badge=`<div class="di-pop-conf ${next.basis==='model'?'high':'medium'}">${next.basis==='model'?'Calibrated':'Estimating'}</div>`;
+      const calib=next.basis==='model'?` Calibrated from your shots: ~${next.clicksPerSec} click${next.clicksPerSec===1?'':'s'} ≈ 1 second on this bean.`:'';
+      guidance=`Last shot ${next.last.time}s (${next.last.time<RCP.tMin?'fast':'slow'})${flowTxt}. Go ${next.step} click${next.step>1?'s':''} ${next.dir} → ${clicks2lbl(next.suggested)} and pull again.${calib}`;
+      grindShown=next.suggested;grindLabel='Next grind';
+      actions=`<button class="di-pop-btn" onclick="markDialedIn();dismissDialInPopup()">✓ Dialed in</button>
+        <button class="di-pop-btn primary" onclick="applyDialInSuggestion(${next.suggested});dismissDialInPopup()">Set ${clicks2lbl(next.suggested)}</button>`;
+    }
+  }
+
+  card.innerHTML=`
+    <div class="di-pop-head">
+      <div class="di-pop-title">${title}</div>
+      ${badge}
+    </div>
+    ${recipePills}${modernHint}
+    <div class="di-pop-sub">${guidance}</div>
+    <div class="di-pop-targets">
+      <div class="di-pop-box"><div class="di-pop-val">${clicks2lbl(grindShown)}</div><div class="di-pop-lbl">${grindLabel}</div></div>
+      <div class="di-pop-box"><div class="di-pop-val" style="font-size:16px">${P.dose}g→${targetYield}g</div><div class="di-pop-lbl">Dose → Cup</div></div>
+      <div class="di-pop-box"><div class="di-pop-val">${RCP.tMin}–${RCP.tMax}s</div><div class="di-pop-lbl">Shot time</div></div>
+    </div>
+    <div style="padding:0 18px 14px;font-size:10px;color:var(--text4);line-height:1.5;text-align:center">${P.dose}g dry coffee in, ${targetYield}g espresso out (a 1:${rec.yieldRatio} ratio)</div>
+    ${rec.reasons.length&&shots.length===0?`<div class="di-pop-reasons">${rec.reasons.slice(0,4).map(r=>`<div class="di-pop-reason">${r}</div>`).join('')}</div>`:''}
+    <div class="di-pop-actions">${actions}</div>`;
+  overlay.style.display='flex';
+}
+
+function dismissDialInPopup(){
+  const overlay=document.getElementById('dialin-popup');
+  if(overlay)overlay.style.display='none';
+}
+
+// Show popup automatically once when a fresh (not dialed-in) bag is set up
+function maybeAutoShowDialIn(){
+  const hasCoffee=C.name||C.country;
+  if(brewMode!=='espresso'||!hasCoffee||C.dialedIn)return;
+  const key=(C.name||'')+'|'+(C.country||'');
+  if(_dialInPopupSeen[key])return;
+  _dialInPopupSeen[key]=true;
+  if((C.dialInShots||[]).length===0)openDialInPopup();
+}
+
+
+// Apply the recommended starting grind to the parameter state
+function applyStartGrind(){
+  const rec=recommendStart();
+  P.grind=rec.grind;
+  P.yield=Math.round(P.dose*rec.yieldRatio*10)/10;
+  persist();updateChips();
+  if(typeof rebuildGrindSlider==='function')rebuildGrindSlider();
+  flashToast('Grind set to '+clicks2lbl(rec.grind));
+}
+
+// Log a dial-in shot (called from timer stop when not yet dialed in)
+function logDialInShot(seconds){
+  if(!C.dialInShots)C.dialInShots=[];
+  C.dialInShots.push({time:seconds,grind:P.grind,yield:P.yield,dose:P.dose,at:Date.now()});
+  if(C.dialInShots.length>8)C.dialInShots=C.dialInShots.slice(-8);
+  persist();
+  renderDialIn();
+}
+
+// Mark current bag as dialed in → unlocks diagnostics focus, saves best grind
+function markDialedIn(){
+  C.dialedIn=true;
+  C.bestGrindClicks=P.grind;
+  C.bestRatio=Math.round((P.yield/P.dose)*10)/10;
+  C.bestGrind=clicks2lbl(P.grind);
+  // Persist to the saved bag too
+  const bag=bags.find(b=>b.name===C.name&&b.country===C.country);
+  if(bag){bag.dialedIn=true;bag.bestGrindClicks=P.grind;bag.bestRatio=C.bestRatio;bag.bestGrind=C.bestGrind;}
+  persist();
+  renderDialIn();
+  updateCoffeeCard();
+  flashToast('✓ Dialed in — now focus on taste');
+}
+
+// Re-open dial-in for a bag (if user wants to re-dial)
+function reopenDialIn(){
+  C.dialedIn=false;
+  C.dialInShots=[];
+  persist();
+  renderDialIn();
+  updateCoffeeCard();
+}
+
+function flashToast(msg){
+  let t=document.getElementById('cejf-toast');
+  if(!t){
+    t=document.createElement('div');
+    t.id='cejf-toast';
+    t.style.cssText='position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--bg3);color:var(--text);border:1px solid var(--gold-dim);padding:10px 18px;border-radius:20px;font-size:13px;font-weight:600;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,0.3);transition:opacity 0.3s;font-family:inherit';
+    document.body.appendChild(t);
+  }
+  t.textContent=msg;
+  t.style.opacity='1';
+  clearTimeout(t._timer);
+  t._timer=setTimeout(()=>{t.style.opacity='0';},2200);
+}
+
 function setGrinder(k){
   if(RIG.grinder!==k){
     // Clear custom range overrides when changing grinder
@@ -1784,6 +2278,7 @@ function setBasketType(v){RIG.basketType=v;persist();if(primaryTaste())renderDia
 
 // ══ PARAMS SHEET ════════════════════════════════════════════════════════════
 function openParamsSheet(){
+  renderRecipeRow();
   const title=document.getElementById('params-sheet-title');
   if(title)title.textContent=brewMode==='pourover'?'Brew Parameters':'Shot Parameters';
   document.getElementById('params-overlay').classList.add('open');
@@ -1813,7 +2308,7 @@ function renderParamsSheetBody(){
     body.innerHTML=buildEspParamsHTML();
     const mc=MACHINES[RIG.machine];
     const hasTempCtrl=!mc||mc.tempCtrl!==false;
-    const isPreground=RIG.grinder==='other_grinder'&&P.grindType==='preground';
+    const isPreground=(RIG.grinder==='nogrinder'||(RIG.grinder==='other_grinder'&&P.grindType==='preground'));
     ['dose','yield','time'].forEach(k=>makeSl(k,'sp-'+k));
     if(!isPreground)rebuildGrindSlider();
     if(hasTempCtrl)makeSl('temp','sp-temp');
@@ -1825,7 +2320,7 @@ function renderParamsSheetBody(){
 function buildEspParamsHTML(){
   const mc=MACHINES[RIG.machine];
   const hasTempCtrl=!mc||mc.tempCtrl!==false;
-  const isPreground=RIG.grinder==='other_grinder'&&P.grindType==='preground';
+  const isPreground=(RIG.grinder==='nogrinder'||(RIG.grinder==='other_grinder'&&P.grindType==='preground'));
   return`
   <div class="s-sec">
     <div class="s-sec-title">Extraction</div>
@@ -1836,9 +2331,9 @@ function buildEspParamsHTML(){
     <div style="margin-bottom:12px">
       <div class="plbl">GRIND TYPE</div>
       <div class="pills" id="grind-label-pills" style="flex-wrap:wrap">
-        ${['Espresso (fine)','Moka pot (medium-fine)','Filter (medium)','French press (coarse)'].map(t=>`<button class="pill sm${P.grindLabel===t?' on':''}" onclick="setGrindLabel('${t}')">${t}</button>`).join('')}
+        ${['Extra-fine','Fine','Medium-fine','Medium','Medium-coarse','Coarse'].map(t=>`<button class="pill sm${P.grindLabel===t?' on':''}" onclick="setGrindLabel('${t}')">${t}</button>`).join('')}
       </div>
-      <div style="font-size:11px;color:var(--text4);margin-top:6px;line-height:1.6">Pre-ground coffee — grind size cannot be adjusted. Select the type for your records.</div>
+      <div style="font-size:11px;color:var(--text4);margin-top:6px;line-height:1.6">${grindLabelHint()}</div>
     </div>`:`<div id="sp-grind"></div>`}
     ${hasTempCtrl?'<div id="sp-temp"></div>':`
     <div style="margin-bottom:12px">
@@ -1899,7 +2394,15 @@ function closePSheet(){document.getElementById('params-sheet').classList.remove(
 
 
 const PO_BREWERS={
-  v60:{name:'Hario V60',grindHint:'Medium-fine. ~3.0.0–4.0.0 on J-Max S.',note:'Spiral pour. Technique-dependent. Target 2:30–3:30.',tempNote:'92–95°C. Light roasts up to 96°C.',
+  turkish:{name:'Turkish coffee',isTurkish:true,grindHint:'Extra-fine \u2014 flour-like powder, finer than espresso.',note:'Not a filter method: powder-fine grounds are heated in the water and settle in the cup. Sugar is part of the recipe \u2014 added to cold water so it dissolves.',tempNote:'Low heat, slow rise \u2014 never a hard boil.',
+    recipes:{
+      tk_plain:{label:'Plain (sade)',sugar:0,recipe:'~7g powder-fine coffee per ~70ml cold water. No sugar. Combine cold, heat slowly, let the foam rise.'},
+      tk_sweet:{label:'Sweet (\u0161ekerli)',sugar:2,recipe:'~7g coffee per ~70ml cold water. Sugar added to the cold water. Heat slowly, rise once or twice.'},
+      tk_bosnian:{label:'Bosnian add-back',sugar:0,recipe:'Boil most of the water first, hold a little back, stir coffee into the rest, return to heat to rise once or twice. Slightly stronger.'},
+      tk_custom:{label:'Custom',sugar:1,recipe:'Your own ratio and sugar level. Adjust sugar with the stepper.'},
+    }
+  },
+  v60:{name:'Hario V60',grindHint:'Medium-fine.',note:'Spiral pour. Technique-dependent. Target 2:30–3:30.',tempNote:'92–95°C. Light roasts up to 96°C.',
     recipes:{
       standard:{label:'Standard (3 pours)',recipe:'15g / 250ml. Bloom 45g × 45s. 3 staged pours.'},
       kasuya:{label:'Tetsu Kasuya 4:6',recipe:'20g / 300ml. 5 pours of 60ml each, 45s apart. First 2 pours control acidity, last 3 control strength.'},
@@ -1952,6 +2455,15 @@ function setPOBrewer(v){
   PO.brewer=v;
   if(!PO.recipe||!PO_BREWERS[v]?.recipes?.[PO.recipe])PO.recipe=Object.keys(PO_BREWERS[v]?.recipes||{})[0]||'standard';
   const b=PO_BREWERS[v];if(!b)return;
+  const ffr=document.getElementById('po-filter-row');if(ffr)ffr.style.display=b.isTurkish?'none':'';
+  if(b.isTurkish){
+    const r=b.recipes[PO.recipe];
+    if(r&&typeof r.sugar==='number')PO.sugar=r.sugar;
+    if(!PO.dose||PO.dose>30)PO.dose=7;
+    PO.water=Math.round(PO.dose*10);
+  }
+  document.getElementById('mode-lbl').textContent=b.isTurkish?'Turkish':'Filter';
+  document.getElementById('log-btn').textContent=b.isTurkish?'LOG THIS CUP':'LOG THIS BREW';
   const note=document.getElementById('po-brewer-note');
   if(note)note.innerHTML='<b style="color:var(--text2)">'+b.name+'</b><br/>'+b.grindHint+(b.note?'<br/>'+b.note:'')+(b.tempNote?'<br/><span style="color:var(--amber)">'+b.tempNote+'</span>':'');
   renderPORecipeVariants();
@@ -1978,12 +2490,39 @@ function updatePORecipeNote(){
   const note=document.getElementById('po-recipe-note');if(!note)return;
   const ratio=(PO.water/PO.dose).toFixed(1);
   const fmt=s=>`${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;
+  if(PO_BREWERS[PO.brewer]&&PO_BREWERS[PO.brewer].isTurkish){note.innerHTML=turkishRecipeHTML();return;}
   const steps=buildPOSteps(PO.brewer,PO.dose,PO.water,PO.bloomTime,PO.totalTime);
   note.innerHTML=`<div style="font-size:10px;font-weight:600;color:var(--text4);letter-spacing:1.5px;margin-bottom:9px">YOUR RECIPE — ${PO.dose}g · ${PO.water}ml · 1:${ratio} · ${fmt(PO.totalTime)}</div>
   ${steps.map((s,i)=>`<div style="display:flex;gap:10px;padding:7px 0;${i<steps.length-1?'border-bottom:1px solid var(--border)':''}">
     <div style="font-family:'Fraunces',serif;font-size:11px;font-weight:500;color:var(--gold);min-width:30px;flex-shrink:0;margin-top:1px">${s.t>0?fmt(s.t):'0:00'}</div>
     <div><div style="font-size:12px;font-weight:600;color:var(--text2);margin-bottom:2px">${s.action}</div><div style="font-size:11px;color:var(--text4);line-height:1.5">${s.detail}</div></div>
   </div>`).join('')}`;
+}
+function turkishRecipeHTML(){
+  const r=PO_BREWERS.turkish.recipes[PO.recipe]||{};
+  const ratio=(PO.water/PO.dose).toFixed(1);
+  const sugarLine=PO.sugar>0?`Sugar: ${PO.sugar} tsp \u2014 add to the cold water so it dissolves and never scorches.`:'No sugar.';
+  const steps=[
+    `Measure ~${PO.dose}g extra-fine coffee (powder-fine, finer than espresso) and ~${PO.water}ml cold water.`,
+    sugarLine,
+    `Combine coffee${PO.sugar>0?' and sugar':''} with the cold water in the d\u017eezva and stir once. Starting cold builds better foam.`,
+    'Heat gently on low. Don\'t stir again \u2014 let a dark foam (kajmak) form on top.',
+    'As it rises toward the rim, lift it off the heat before it boils over. Spoon a little foam into each cup.',
+    'Return to the heat to rise once or twice more, then pour slowly to keep the foam on top.',
+    'Rest a few seconds so the grounds settle. Sip; leave the sediment in the cup.'
+  ];
+  return `<div style="font-size:10px;font-weight:600;color:var(--text4);letter-spacing:1.5px;margin-bottom:9px">YOUR CUP \u2014 ${PO.dose}g \u00b7 ${PO.water}ml \u00b7 1:${ratio} \u00b7 ${PO.sugar>0?PO.sugar+' tsp sugar':'no sugar'}</div>`
+    +`<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px"><div class="plbl" style="margin:0">SUGAR (tsp)</div>`
+    +`<div style="display:flex;align-items:center;gap:0;margin-left:auto">`
+    +`<button onclick="adjTurkishSugar(-1)" style="width:30px;height:30px;border:1px solid var(--border2);border-radius:8px 0 0 8px;background:var(--bg3);color:var(--text2);font-size:16px;cursor:pointer">\u2212</button>`
+    +`<div style="min-width:38px;text-align:center;font-family:'Fraunces',serif;font-size:16px;color:var(--gold);border-top:1px solid var(--border2);border-bottom:1px solid var(--border2);height:30px;line-height:30px">${PO.sugar}</div>`
+    +`<button onclick="adjTurkishSugar(1)" style="width:30px;height:30px;border:1px solid var(--border2);border-radius:0 8px 8px 0;background:var(--bg3);color:var(--text2);font-size:16px;cursor:pointer">+</button>`
+    +`</div></div>`
+    +`<ol class="tk-steps" style="margin:0;padding-left:20px">`+steps.map(s=>`<li>${s}</li>`).join('')+`</ol>`;
+}
+function adjTurkishSugar(d){
+  PO.sugar=Math.max(0,Math.min(6,(PO.sugar||0)+d));
+  persist();updatePORecipeNote();updateChips();
 }
 function buildPOParamsHTML(){return`
   <div class="s-sec">
@@ -1992,11 +2531,13 @@ function buildPOParamsHTML(){return`
     <div class="sel-wrap" style="margin-bottom:9px"><select id="po-brewer" onchange="setPOBrewer(this.value)">
       ${Object.entries(PO_BREWERS).map(([k,b])=>`<option value="${k}"${k===PO.brewer?' selected':''}>${b.name}</option>`).join('')}
     </select></div>
+    <div id="po-filter-row">
     <div class="plbl">FILTER</div>
     <div class="sel-wrap" style="margin-bottom:9px"><select id="po-filter" onchange="PO.filter=this.value;persist()">
       <option value="paper">Paper (bleached)</option><option value="paper_natural">Paper (natural)</option>
       <option value="metal">Metal</option><option value="cloth">Cloth</option>
     </select></div>
+    </div>
     <div id="po-brewer-note" style="font-size:12px;color:var(--text4);padding:8px 10px;background:var(--bg3);border-radius:var(--r-sm);line-height:1.7;margin-bottom:4px"></div>
     <div id="po-recipe-variants"></div>
   </div>
@@ -2079,7 +2620,7 @@ function saveC(){
   // Update in bags array if already saved
   const existing=bags.findIndex(b=>b.name===C.name&&b.country===C.country);
   if(existing>=0){bags[existing]={...JSON.parse(JSON.stringify(C)),savedAt:Date.now()};}
-  persist();updateCoffeeCard();closeCoffeeSheet();
+  persist();updateCoffeeCard();closeCoffeeSheet();maybeAutoShowDialIn();
   updateRefBar();updateDialinStrip();
 }
 
@@ -2135,14 +2676,14 @@ function updateC(){
 
 // ══ FLAVOUR WHEEL DATA ═══════════════════════════════════════════════════════
 const ORIGINS={
-  ethiopia:{flag:'ET',name:'Ethiopia',region:'East Africa',altitude:'1500–2200m',flavors:['Blueberry','Jasmine','Bergamot','Lemon'],brew_note:'Birthplace of coffee. Natural process = wine-like; washed = floral and tea-like. High-density SHB beans need higher temp.',diag:'If sour: raise temp to 94–96°C before touching grind. Ethiopian light roasts need heat to unlock.'},
-  kenya:{flag:'KE',name:'Kenya',region:'East Africa',altitude:'1400–2000m',flavors:['Blackcurrant','Tomato','Grapefruit','Winey'],brew_note:'SL28/SL34 give the famous "Kenya tang". Double-washed creates intense clarity.',diag:'The tang is natural, not a flaw. Try 1:2.2–2.4 before grinding finer. Lower temp to 91°C to reduce bitterness.'},
-  colombia:{flag:'CO',name:'Colombia',region:'South America',altitude:'1200–2000m',flavors:['Caramel','Red apple','Orange','Chocolate'],brew_note:'Most forgiving origin. Standard parameters work well. Balanced and beginner-friendly.',diag:'Sour = genuine under-extraction, grind finer. Bitter = too fine or too hot. Colombia extracts evenly.'},
-  brazil:{flag:'BR',name:'Brazil',region:'South America',altitude:'700–1200m',flavors:['Dark chocolate','Almonds','Caramel','Malt'],brew_note:'Most common espresso base. Low-altitude soft beans extract quickly. Lower temp recommended.',diag:'Extracts fast — grind coarser and lower temp to 88–91°C. Bitter = overextracted. Use within 21 days.'},
-  guatemala:{flag:'GT',name:'Guatemala',region:'Central America',altitude:'1300–2000m',flavors:['Dark chocolate','Cinnamon','Brown sugar','Spice'],brew_note:'Volcanic soil gives smoky depth. Antigua and Huehuetenango are the key regions.',diag:'Bright acidity is natural character. Rest 10–14 days post-roast. Spice notes that seem harsh = check distribution.'},
-  costa_rica:{flag:'CR',name:'Costa Rica',region:'Central America',altitude:'1200–1900m',flavors:['Citrus','Honey','Peach','Clean'],brew_note:'Known for honey process from Tarrazú. Clean and bright.',diag:'Honey process may need slightly finer grind than washed. Bright acidity = not a flaw.'},
-  indonesia:{flag:'ID',name:'Indonesia',region:'Asia-Pacific',altitude:'1000–1800m',flavors:['Earth','Wood','Tobacco','Cedar'],brew_note:'Wet-hulled process creates heavy body. Extracts quickly. Sumatra Gayo is the key origin.',diag:'Grind significantly coarser, lower temp to 88–91°C. Very sensitive to over-extraction. Use within 3 weeks.'},
-  yemen:{flag:'YE',name:'Yemen',region:'Middle East',altitude:'1500–2500m',flavors:['Wine','Dark fruit','Spice','Chocolate'],brew_note:'The original coffee culture. Džezva is the traditional method. Wild and variable.',diag:'Wild fermented acidity is characteristic, not a flaw. If overly funky: rest longer (14–21d) and slightly lower temp.'},
+  ethiopia:{density:'high',flag:'ET',name:'Ethiopia',region:'East Africa',altitude:'1500–2200m',flavors:['Blueberry','Jasmine','Bergamot','Lemon'],brew_note:'Birthplace of coffee. Natural process = wine-like; washed = floral and tea-like. High-density SHB beans need higher temp.',diag:'If sour: raise temp to 94–96°C before touching grind. Ethiopian light roasts need heat to unlock.'},
+  kenya:{density:'high',flag:'KE',name:'Kenya',region:'East Africa',altitude:'1400–2000m',flavors:['Blackcurrant','Tomato','Grapefruit','Winey'],brew_note:'SL28/SL34 give the famous "Kenya tang". Double-washed creates intense clarity.',diag:'The tang is natural, not a flaw. Try 1:2.2–2.4 before grinding finer. Lower temp to 91°C to reduce bitterness.'},
+  colombia:{density:'medium',flag:'CO',name:'Colombia',region:'South America',altitude:'1200–2000m',flavors:['Caramel','Red apple','Orange','Chocolate'],brew_note:'Most forgiving origin. Standard parameters work well. Balanced and beginner-friendly.',diag:'Sour = genuine under-extraction, grind finer. Bitter = too fine or too hot. Colombia extracts evenly.'},
+  brazil:{density:'low',flag:'BR',name:'Brazil',region:'South America',altitude:'700–1200m',flavors:['Dark chocolate','Almonds','Caramel','Malt'],brew_note:'Most common espresso base. Low-altitude soft beans extract quickly. Lower temp recommended.',diag:'Extracts fast — grind coarser and lower temp to 88–91°C. Bitter = overextracted. Use within 21 days.'},
+  guatemala:{density:'high',flag:'GT',name:'Guatemala',region:'Central America',altitude:'1300–2000m',flavors:['Dark chocolate','Cinnamon','Brown sugar','Spice'],brew_note:'Volcanic soil gives smoky depth. Antigua and Huehuetenango are the key regions.',diag:'Bright acidity is natural character. Rest 10–14 days post-roast. Spice notes that seem harsh = check distribution.'},
+  costa_rica:{density:'medium',flag:'CR',name:'Costa Rica',region:'Central America',altitude:'1200–1900m',flavors:['Citrus','Honey','Peach','Clean'],brew_note:'Known for honey process from Tarrazú. Clean and bright.',diag:'Honey process may need slightly finer grind than washed. Bright acidity = not a flaw.'},
+  indonesia:{density:'medium',flag:'ID',name:'Indonesia',region:'Asia-Pacific',altitude:'1000–1800m',flavors:['Earth','Wood','Tobacco','Cedar'],brew_note:'Wet-hulled process creates heavy body. Extracts quickly. Sumatra Gayo is the key origin.',diag:'Grind significantly coarser, lower temp to 88–91°C. Very sensitive to over-extraction. Use within 3 weeks.'},
+  yemen:{density:'high',flag:'YE',name:'Yemen',region:'Middle East',altitude:'1500–2500m',flavors:['Wine','Dark fruit','Spice','Chocolate'],brew_note:'The original coffee culture. Džezva is the traditional method. Wild and variable.',diag:'Wild fermented acidity is characteristic, not a flaw. If overly funky: rest longer (14–21d) and slightly lower temp.'},
   other:{flag:'🌍',name:'Other origin',region:'Various',altitude:'Varies',flavors:['Complex','Varied'],brew_note:'Parameters depend on specific origin altitude and process.',diag:''},
 };
 const ORIGIN_DETAILS={
@@ -2177,7 +2718,9 @@ function getBeanDensity(b){
 
 const LEARN=[
   {id:'howto',ico:'🗺️',title:'How Ćejf Works',sub:'Start here — a guide to the app',
-   body:`<h3>What Ćejf is for</h3><p>Ćejf (pronounced "chayf" — a Bosnian word for slow, pleasurable enjoyment) helps you dial in espresso and pour-over by connecting what you taste to what you should change. It's part diagnostics tool, part shot tracker. You don't need to use both — some people just want to log shots, others want the full diagnostic engine.</p>
+   body:`<h3>What Ćejf is for</h3><p>Ćejf (pronounced "chayf" — a Bosnian word for slow, pleasurable enjoyment) helps you dial in espresso, filter, and Turkish coffee by connecting what you taste to what you should change. It's part diagnostics tool, part shot tracker. You don't need to use both — some people just want to log shots, others want the full diagnostic engine.</p>
+
+<h3>The two phases: dial in, then diagnose</h3><p>Every new bag follows a natural rhythm, and Ćejf is built around it. <b>Phase one — dial in.</b> When you set up a bag, Ćejf suggests a starting grind and yield from the bean's origin, roast, process, variety and freshness. Pull a shot, time it with the Time chip, and the engine calibrates: after two shots at different grinds it has measured how many clicks equal one second <i>for this exact bean on your grinder</i>, and tells you the precise next setting to hit the 25–35s window. <b>Phase two — diagnose.</b> Once you tap "Dialed in", the focus shifts to taste: select what you taste and the diagnostic engine fine-tunes from there, always leading with grind and yield — the levers you can change between shots.</p>
 
 <h3>The two modes</h3><p><b>Quick mode</b> (tap QUICK in the header): three questions — grinder type, freshness, shot time — then one clear recommendation. Designed for beginners or for days when you just want guidance without detail. <b>Full mode</b> (tap FULL): complete parameter control, multi-taste diagnostics, puck analysis, and compound-level reasoning. You can switch between modes any time.</p>
 
@@ -2185,7 +2728,7 @@ const LEARN=[
 
 <p>You don't have to rate every shot. If you're dialled in and just tracking, tap Log without selecting a taste. The shot still saves with all its parameters.</p>
 
-<h3>The grind slider</h3><p>The slider shows your grinder's full range. The hint text tells you the recommended zone for espresso or pour-over. Use the − and + buttons beside the value for precise single-click adjustments. For J-Max S: espresso zone is 1.0.0–1.5.0 (90–150 clicks), pour-over is 2.6.0–3.3.0 (240–300 clicks).</p>
+<h3>The grind slider</h3><p>The slider shows your grinder's full range, and the hint text marks the recommended zone for the mode you're in. Use the − and + buttons for precise single-click adjustments. If you don't have a grinder, pick “No grinder / pre-ground” in setup and the slider becomes a simple Extra-fine → Coarse scale instead of clicks. Exact numbers vary by grinder — Ćejf reads your model's range from your setup.</p>
 
 <h3>What the diagnostics actually do</h3><p>When you select a taste, the engine checks: did you select a combination (e.g. bitter + sour together = channeling, not a grind issue)? What was the shot time? What's the intensity of each taste? Does the bean profile affect the recommendation? Your shot history is also checked — if you already moved grind in the recommended direction and got the same result, the advice shifts to yield instead.</p>
 
@@ -2201,33 +2744,115 @@ const LEARN=[
 
 <h3>Quick vs Full diagnostics — when to use each</h3><p>Use Quick when: you're new to espresso, you're pulling a milk drink and don't want detailed analysis, or you just want the single most important thing to change. Use Full when: you're chasing a specific flavour, you've tried the obvious fix and it didn't work, or you want to understand why the shot tasted the way it did.</p>`},
 
+  {id:'milk',ico:'🥛',title:'Milk & Frothing',sub:'Steam great microfoam — and pour it',
+   body:`<h3>Why milk matters</h3><p>Milk isn't a topping — it's half the drink. Lactose turns noticeably sweeter as milk warms toward 60°C, fat carries the coffee's aromatics across your palate, and the proteins are what hold microfoam together. Steam it right and a cappuccino tastes sweeter with zero sugar added. Overheat it and the proteins break: the sweetness dies, the texture turns to dry bubbles.</p>
+
+<h3>The two phases</h3><p>Every steam is two distinct jobs done in one motion: first you <b>stretch</b> (introduce air), then you <b>texture</b> (spin that air into silk).</p>
+<svg viewBox="0 0 340 168" style="width:100%;max-width:360px;display:block;margin:10px auto">
+  <!-- Phase 1: STRETCH -->
+  <g>
+    <path d="M28 56 L40 132 Q41 140 49 140 L111 140 Q119 140 120 132 L132 56" fill="none" stroke="var(--text3)" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M28 56 L20 46" fill="none" stroke="var(--text3)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M34 78 L42 128 Q43 134 49 134 L111 134 Q117 134 118 128 L126 78 Z" fill="var(--gold)" opacity="0.13"/>
+    <line x1="34" y1="78" x2="126" y2="78" stroke="var(--gold)" stroke-width="1.6" opacity="0.7"/>
+    <line x1="118" y1="20" x2="96" y2="76" stroke="var(--text2)" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="96" cy="78" r="3.6" fill="var(--gold)"/>
+    <path d="M84 70 Q88 66 92 70" stroke="var(--gold)" stroke-width="1.3" fill="none" opacity="0.8"/>
+    <path d="M80 64 Q86 58 92 64" stroke="var(--gold)" stroke-width="1.3" fill="none" opacity="0.5"/>
+    <text x="80" y="158" text-anchor="middle" font-size="10" font-weight="700" fill="var(--gold)" font-family="inherit">1 · STRETCH</text>
+    <text x="80" y="167" text-anchor="middle" font-size="8" fill="var(--text4)" font-family="inherit" hidden>tip at surface</text>
+  </g>
+  <!-- Phase 2: TEXTURE -->
+  <g transform="translate(180,0)">
+    <path d="M28 56 L40 132 Q41 140 49 140 L111 140 Q119 140 120 132 L132 56" fill="none" stroke="var(--text3)" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M28 56 L20 46" fill="none" stroke="var(--text3)" stroke-width="2" stroke-linecap="round"/>
+    <path d="M34 78 L42 128 Q43 134 49 134 L111 134 Q117 134 118 128 L126 78 Z" fill="var(--gold)" opacity="0.13"/>
+    <line x1="34" y1="78" x2="126" y2="78" stroke="var(--gold)" stroke-width="1.6" opacity="0.7"/>
+    <line x1="118" y1="20" x2="98" y2="90" stroke="var(--text2)" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="98" cy="92" r="3.6" fill="var(--gold)"/>
+    <path d="M58 104 Q80 116 102 104 Q92 98 76 100" fill="none" stroke="var(--gold)" stroke-width="1.6" opacity="0.85"/>
+    <path d="M76 100 L70 97 M76 100 L74 106" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round" opacity="0.85"/>
+    <text x="80" y="158" text-anchor="middle" font-size="10" font-weight="700" fill="var(--gold)" font-family="inherit">2 · TEXTURE</text>
+  </g>
+</svg>
+
+<h3>How to hold the tip</h3><p><b>Stretch (the first 2–4 seconds):</b> wand tip just kissing the surface, slightly off-centre, pitcher tilted a touch toward the wand. You want a crisp <i>paper-tearing</i> hiss — that sound is air entering. For a cappuccino give it 3–4 seconds of hiss; for a flat white, 1–2.</p><p><b>Texture (the rest):</b> sink the tip about 1 cm and keep it off-centre so the milk spins into a whirlpool. The hiss goes silent — now the vortex is shearing the big bubbles into microfoam. Hold until temperature.</p>
+
+<h3>Temperature by milk</h3><p><b>Whole / semi:</b> 60–65°C — peak sweetness, classic microfoam. <b>Oat:</b> 55–60°C — barista oat textures beautifully but thins and splits past ~65°C. <b>Almond:</b> 55–60°C, steam gently — it separates when pushed. <b>Soy:</b> 55–60°C and keep it cooler — soy can curdle against bright, acidic coffees.</p><p><b>No thermometer?</b> The hand rule: when the pitcher is just too hot to hold for more than two seconds, you're at roughly 60–65°C. Stop there.</p>
+
+<h3>Milk and your shot</h3><p>Milk mutes acidity and dilutes everything else, so a shot destined for milk should taste slightly <i>too intense</i> on its own. Keep the ratio tighter — around 1:1.8–2.0 — and don't chase delicate florals for a cappuccino; they won't survive. Ćejf flags this automatically when you select a milk drink, and the milk picker under the drink row remembers your milk and shows its steam target.</p>
+
+<h3>The pour, briefly</h3><p>Swirl the pitcher until the milk looks like wet paint — glossy, no visible bubbles. Start the pour high and thin to mix, then drop the pitcher close to the cup and speed up to float the foam. If the milk sits in the cup as a stiff white island, it was over-stretched; if there's no white at all, under-stretched. Adjust the hiss time next round.</p>`},
   {id:'extraction',ico:'⚗️',title:'Extraction Fundamentals',sub:'The chemistry of dissolving coffee',
    body:`<h3>What is extraction?</h3><p>Extraction dissolves soluble compounds from ground coffee into water. Of the ~30% of coffee that is soluble, a well-pulled espresso dissolves 18–22% (extraction yield, EY). Pour-over targets a slightly wider 18–24%. Under 18% = under-extracted: sour, thin, grassy. Over 22–24% = over-extracted: bitter, dry, hollow.</p>
+<svg viewBox="0 0 340 110" style="width:100%;max-width:360px;display:block;margin:12px auto">
+  <text x="170" y="14" text-anchor="middle" font-size="9" font-weight="700" fill="var(--text4)" font-family="inherit" letter-spacing="1.5">WHAT DISSOLVES, IN ORDER</text>
+  <rect x="20" y="28" width="100" height="30" rx="6" fill="#c8a030" opacity="0.22"/>
+  <rect x="124" y="28" width="100" height="30" rx="6" fill="var(--gold)" opacity="0.28"/>
+  <rect x="228" y="28" width="92" height="30" rx="6" fill="#9060a0" opacity="0.22"/>
+  <text x="70" y="47" text-anchor="middle" font-size="11" font-weight="700" fill="#c8a030" font-family="inherit">ACIDS</text>
+  <text x="174" y="47" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gold)" font-family="inherit">SUGARS</text>
+  <text x="274" y="47" text-anchor="middle" font-size="11" font-weight="700" fill="#9060a0" font-family="inherit">BITTERS</text>
+  <text x="70" y="70" text-anchor="middle" font-size="8" fill="var(--text4)" font-family="inherit">bright, fruity</text>
+  <text x="174" y="70" text-anchor="middle" font-size="8" fill="var(--text4)" font-family="inherit">sweet, balanced</text>
+  <text x="274" y="70" text-anchor="middle" font-size="8" fill="var(--text4)" font-family="inherit">harsh, dry</text>
+  <line x1="20" y1="86" x2="312" y2="86" stroke="var(--text4)" stroke-width="1.2"/>
+  <path d="M312 86 L305 82 M312 86 L305 90" stroke="var(--text4)" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  <text x="20" y="100" font-size="8" fill="var(--text4)" font-family="inherit">start of shot</text>
+  <text x="312" y="100" text-anchor="end" font-size="8" fill="var(--text4)" font-family="inherit">end of shot</text>
+  <text x="170" y="100" text-anchor="middle" font-size="8" font-style="italic" fill="var(--text3)" font-family="inherit">stop sour = too early · stop bitter = too late</text>
+</svg>
 
 <h3>Compounds dissolve in sequence</h3><p><b>First out (very soluble):</b> organic acids — citric, malic, acetic. Responsible for brightness and fruitiness. Dissolve within seconds. <b>Mid-range:</b> sucrose degradation products (sweetness), trigonelline (nutty-sweet notes), body compounds. <b>Last out (slowly soluble):</b> caffeine, chlorogenic acids, quinides, and phenolics — bitterness and astringency. These need time, heat, and pressure.</p>
 
 <h3>The two independent axes</h3><p><b>Extraction level</b> (sour ← → bitter): controlled by grind size, contact time, temperature, and distribution. <b>Strength / TDS</b> (weak ← → strong): controlled entirely by dose-to-yield ratio. You can be bitter-and-weak or sour-and-strong simultaneously. Fix them independently — grind for extraction, yield for strength.</p>
 
-<h3>Combination tastes signal specific problems</h3><p>Ćejf detects known taste combinations and changes the recommendation accordingly. <b>Bitter + sour together</b> = channeling (uneven extraction) — the fix is distribution, not grind. <b>Astringent + bitter</b> = pressure or temperature issue, not contact time. <b>Sour + weak together</b> = both axes are off simultaneously — finer grind AND less yield. <b>Bitter + flat</b> = likely stale beans — no grind change will fix this.</p>
+<h3>Combination tastes signal specific problems</h3><p>Ćejf detects known taste combinations and changes the recommendation accordingly. <b>Bitter + sour together</b> = uneven extraction — on darker roasts, fix distribution; on lighter roasts the grind is usually already too fine: go coarser and pull a longer ratio. <b>Astringent + bitter</b> = pressure or temperature issue, not contact time. <b>Sour + weak together</b> = both axes are off simultaneously — finer grind AND less yield. <b>Bitter + flat</b> = likely stale beans — no grind change will fix this.</p>
 
 <h3>Intensity matters</h3><p>A subtle (1/5) bitterness at correct shot time is often the bean's natural character. An intense (5/5) bitterness is a clear extraction problem requiring a larger grind adjustment. Ćejf scales its recommended step size by the intensity you select — mild issues get conservative adjustments, intense issues get larger ones.</p>
 
-<h3>Espresso vs pour-over</h3><p>Espresso uses pressure to force water through a dense puck in 25–35 seconds. Pressure dramatically accelerates extraction — the dense slurry and high pressure make temperature and grind have outsized effects. Pour-over uses gravity over 2–4 minutes with no pressure amplification — brew time is the master diagnostic, grind is the primary control lever.</p>`},
+<h3>Espresso vs filter vs Turkish</h3><p><b>Espresso</b> forces water through a dense puck under pressure in seconds — grind and temperature have outsized effects. <b>Filter</b> (pour over and immersion) uses gravity or steeping over minutes with no pressure: brew time is the master diagnostic, grind the primary lever. <b>Turkish</b> uses no filter at all — powder-fine grounds are heated in water and stay in the cup, so technique and heat control matter more than any single number.</p>`},
 
   {id:'grind',ico:'⚙️',title:'Grind Size',sub:'The single most impactful variable',
    body:`<h3>Why grind dominates</h3><p>Grind size simultaneously controls two things: particle surface area (how much coffee is exposed to water) and flow resistance (how long water stays in contact). Finer grind = more surface + more resistance = slower flow = more extraction. These effects compound — a 5% reduction in particle size roughly doubles extraction surface area.</p>
+<svg viewBox="0 0 340 132" style="width:100%;max-width:360px;display:block;margin:12px auto">
+  <g>
+    <rect x="30" y="24" width="110" height="58" rx="8" fill="none" stroke="var(--text3)" stroke-width="1.6"/>
+    <g fill="var(--gold)" opacity="0.75">
+      <circle cx="45" cy="36" r="2.2"/><circle cx="58" cy="33" r="2.2"/><circle cx="71" cy="37" r="2.2"/><circle cx="84" cy="33" r="2.2"/><circle cx="97" cy="36" r="2.2"/><circle cx="110" cy="34" r="2.2"/><circle cx="123" cy="37" r="2.2"/>
+      <circle cx="50" cy="48" r="2.2"/><circle cx="63" cy="46" r="2.2"/><circle cx="77" cy="49" r="2.2"/><circle cx="90" cy="46" r="2.2"/><circle cx="104" cy="48" r="2.2"/><circle cx="117" cy="46" r="2.2"/>
+      <circle cx="45" cy="60" r="2.2"/><circle cx="58" cy="58" r="2.2"/><circle cx="71" cy="61" r="2.2"/><circle cx="84" cy="58" r="2.2"/><circle cx="97" cy="60" r="2.2"/><circle cx="110" cy="58" r="2.2"/><circle cx="123" cy="61" r="2.2"/>
+      <circle cx="52" cy="71" r="2.2"/><circle cx="66" cy="70" r="2.2"/><circle cx="80" cy="72" r="2.2"/><circle cx="94" cy="70" r="2.2"/><circle cx="108" cy="71" r="2.2"/>
+    </g>
+    <line x1="85" y1="88" x2="85" y2="112" stroke="var(--blue)" stroke-width="1.6" stroke-dasharray="3 3"/>
+    <path d="M85 112 L81 105 M85 112 L89 105" stroke="var(--blue)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+    <text x="85" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="var(--gold)" font-family="inherit">FINE</text>
+    <text x="85" y="126" text-anchor="middle" font-size="8" fill="var(--text4)" font-family="inherit">slow flow · long contact</text>
+  </g>
+  <g transform="translate(170,0)">
+    <rect x="30" y="24" width="110" height="58" rx="8" fill="none" stroke="var(--text3)" stroke-width="1.6"/>
+    <g fill="var(--gold)" opacity="0.75">
+      <circle cx="52" cy="40" r="6"/><circle cx="78" cy="36" r="6"/><circle cx="104" cy="41" r="6"/><circle cx="120" cy="35" r="5"/>
+      <circle cx="44" cy="62" r="6"/><circle cx="68" cy="58" r="6"/><circle cx="93" cy="63" r="6"/><circle cx="117" cy="58" r="6"/>
+    </g>
+    <line x1="85" y1="88" x2="85" y2="112" stroke="var(--blue)" stroke-width="2.6"/>
+    <path d="M85 112 L80 104 M85 112 L90 104" stroke="var(--blue)" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <text x="85" y="16" text-anchor="middle" font-size="10" font-weight="700" fill="var(--gold)" font-family="inherit">COARSE</text>
+    <text x="85" y="126" text-anchor="middle" font-size="8" fill="var(--text4)" font-family="inherit">fast flow · short contact</text>
+  </g>
+</svg>
 
 <h3>Grind for espresso</h3><p>Target: 25–35 second shot at your chosen dose/yield. One click on most hand grinders changes shot time by 1–2 seconds. Adjust in 3–5 click increments. Let the machine equilibrate — the first shot after a grind change often behaves differently from the second. Always adjust grind before yield.</p>
 
-<h3>J-Max S reference ranges</h3><p>Espresso: <b>1.0.0–1.5.0</b> (90–150 clicks). AeroPress/Moka: 2.0.0–2.6.0 (180–240 clicks). Pour-over/Siphon: <b>2.6.0–3.3.0</b> (240–300 clicks). French Press: 4.0.0–4.6.0 (360–420 clicks). Maximum physical range: 4.8.9 (449 clicks). These are starting zones — your ideal grind within the zone depends on bean density, freshness, and roast level.</p>
+<h3>Grind size by method</h3><p>Rough guide, finest to coarsest: <b>Turkish</b> = flour-fine powder. <b>Espresso</b> = fine, like table salt. <b>Moka / AeroPress</b> = medium-fine. <b>Pour over / filter</b> = medium, like coarse sand. <b>Immersion (Clever, siphon)</b> = medium to medium-coarse. <b>French press</b> = coarse, like breadcrumbs. These are starting points — your ideal grind depends on bean density, freshness and roast. Ćejf maps these to your specific grinder's range automatically.</p>
 
 <h3>History-aware adjustment</h3><p>Ćejf tracks whether you already moved grind in the recommended direction. If you went finer and still got sour, the diagnostic shifts to yield as the next variable — grind may be at its useful limit for that bean. This prevents the common trap of chasing a taste problem with the same lever repeatedly.</p>
 
-<h3>When grind isn't the answer</h3><p>If bitter + sour appear together, the problem is channeling — water taking uneven paths through the puck. Going coarser won't fix channeling; it will make the overall extraction lighter but the unevenness remains. Fix distribution first (WDT, level tamp), then re-evaluate taste before touching grind. Ćejf suppresses the grind recommendation entirely when this combination is detected.</p>
+<h3>When grind isn't the answer</h3><p>If bitter + sour appear together, extraction is uneven. On darker roasts the culprit is usually distribution — fix WDT and tamp level before touching grind, and Ćejf holds the grind card accordingly. On lighter roasts the root cause is more often that the grind is simply too fine: dense, low-fines beans ground to chase 9 bar choke unevenly, so the engine recommends coarser plus a longer ratio instead (see Pressure & OPV: “9 bar is a convention”).</p>
 
 <h3>Grind for pour-over</h3><p>Target: brewer-specific. V60 at 1:15 = roughly 2:30–3:00. Chemex runs 30–60s longer. AeroPress is highly variable by recipe. Coarser than espresso by a large margin. Grind consistency matters more in pour-over — without pressure to equalise extraction, uneven particles cause more problems over a 3-minute brew.</p>`},
 
-  {id:'pourover',ico:'☕',title:'Pour-Over Science',sub:'Gravity, turbulence, and contact time',
+  {id:'pourover',ico:'☕',title:'Filter Brewing',sub:'Percolation, immersion, and contact time',
    body:`<h3>How pour-over works differently from espresso</h3><p>Pour-over has no pressure — it relies entirely on contact time, temperature, and grind to control what dissolves. Brew time is the master diagnostic: too fast = under-extracted, too slow = over-extracted. Everything else is secondary. Ćejf adjusts its recommendations based on which brewer you're using, since each has different optimal time windows.</p>
 
 <h3>The bloom</h3><p>CO₂ released from fresh coffee actively repels water, preventing proper extraction. The bloom uses 2–3× dose in water (e.g. 30g dose → 60–90ml water) to saturate grounds and let gas escape before main pouring begins. 45–60 seconds is the target. Under-bloomed coffee tastes sour even at correct brew time, because CO₂ shortened effective contact. Very fresh beans (under 7 days) may need a longer bloom — this is a known cause of sourness that no grind adjustment will fix.</p>
@@ -2273,28 +2898,91 @@ const LEARN=[
 
   {id:'pressure',ico:'⚡',title:'Pressure & OPV',sub:'The hidden variable in espresso',
    body:`<h3>Why pressure matters</h3><p>Espresso is defined by pressure — typically 9 bar. Pressure forces water through the puck, accelerating extraction beyond what contact time alone would achieve. It also physically emulsifies oils, creating crema. But pressure is a double-edged variable: too much causes channeling, astringency, and bitterness from quinide over-extraction.</p>
+<svg viewBox="0 0 340 120" style="width:100%;max-width:360px;display:block;margin:12px auto">
+  <line x1="34" y1="14" x2="34" y2="96" stroke="var(--text4)" stroke-width="1.2"/>
+  <line x1="34" y1="96" x2="320" y2="96" stroke="var(--text4)" stroke-width="1.2"/>
+  <text x="26" y="38" text-anchor="end" font-size="8" fill="var(--text4)" font-family="inherit">9</text>
+  <text x="26" y="66" text-anchor="end" font-size="8" fill="var(--text4)" font-family="inherit">6</text>
+  <line x1="34" y1="34" x2="320" y2="34" stroke="var(--text4)" stroke-width="0.7" stroke-dasharray="2 4" opacity="0.5"/>
+  <path d="M34 96 Q60 40 90 35 L300 35" fill="none" stroke="var(--green)" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M34 96 Q48 30 62 16 Q72 8 82 22 Q94 40 120 44 Q180 50 300 48" fill="none" stroke="var(--red)" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4" opacity="0.85"/>
+  <text x="305" y="32" text-anchor="end" font-size="9" font-weight="700" fill="var(--green)" font-family="inherit">steady, no spike ✓</text>
+  <text x="100" y="14" font-size="9" font-weight="700" fill="var(--red)" font-family="inherit">spike = channeling + astringency</text>
+  <text x="177" y="112" text-anchor="middle" font-size="8" fill="var(--text4)" font-family="inherit">time →</text>
+</svg>
 
 <h3>The OPV (Over-Pressure Valve)</h3><p>The OPV is a spring-loaded valve that limits maximum pump pressure. Most home machines have it set at 12–15 bar from the factory — far too high. Specialty espresso targets 8–9 bar. Resetting the OPV to 9 bar is the single most impactful hardware modification for home espresso and requires only a screwdriver. The valve is usually accessible by removing the drip tray.</p>
+<h3>9 bar is a convention, not a law</h3><p>Nine-bar espresso dates to 1948 and was designed around dark roasts — brittle, fines-heavy, CO₂-rich beans with built-in puck resistance. Light and medium roasts are denser, more hydrophobic and produce far fewer fines, so reaching 9 bar means grinding much finer — often straight into the sour-and-bitter channeling zone. Modern light-roast espresso flips the system: grind coarser, extend the ratio to 1:2.5–3+, and let pressure land wherever it lands. At fast flow, pressure becomes a red herring — flow rate (g/s) is the truer variable, which also means the same recipe finishes at different times on different machines: a pump pushing 8 g/s makes one person's 14-second shot another machine's 17 seconds.</p><p><b>And crema?</b> Crema is oil emulsified under pressure — at low pressure there simply isn't much, and that's normal, not a fault. It was never a reliable quality signal.</p>
 
 <h3>OPV activation in Ćejf</h3><p>In the Shot Parameters sheet, there's a "Did OPV activate?" toggle. If your pressure gauge spiked above your set point during the shot, mark this as Yes. Ćejf treats an OPV spike as a primary cause of astringency and channeling — it overrides the grind recommendation and instead points to puck resistance as the root cause. Fix: grind coarser to reduce puck resistance, or lower the OPV set point.</p>
 
-<h3>Pre-infusion</h3><p>Pre-infusion wets the puck at low pressure (1–4 bar) before ramping to full extraction pressure. This saturates grounds evenly, reducing channeling risk dramatically. Machines with dedicated pre-infusion (Ascaso Duo, Lelit Mara) allow independent control of flow time and pause time. Even a 3-second soak improves puck saturation for most coffees. For very fresh beans, longer pre-infusion (5–8s) helps CO₂ escape before full pressure hits.</p>
+<h3>Pre-infusion</h3><p>Pre-infusion wets the puck at low pressure (1–4 bar) before ramping to full extraction pressure. This saturates grounds evenly, reducing channeling risk dramatically. Some machines with dedicated pre-infusion allow independent control of flow time and pause time. Even a 3-second soak improves puck saturation for most coffees. For very fresh beans, longer pre-infusion (5–8s) helps CO₂ escape before full pressure hits.</p>
 
 <h3>Flow profiling</h3><p>Advanced machines with flow control allow you to change pressure dynamically throughout the shot — starting low, ramping up, then declining. This is beyond the scope of Ćejf's current diagnostics, but logging your pressure profile alongside taste will help you identify which phase is causing problems.</p>
 
-<h3>Pressure and the Ascaso Duo specifically</h3><p>The Ascaso Duo PID has a thermoblock and a manual flow control system. To enable pre-infusion, both the flow time AND the pause time must be set — flow alone has no effect. Set flow to 3–5s, pause to 3–5s as a starting point. The machine's pressure is pump-controlled, so OPV adjustment applies.</p>`},
+<h3>If your machine has manual pre-infusion</h3><p>Some machines (often thermoblock designs) need <i>both</i> a flow time and a pause time set for pre-infusion to do anything — flow alone may have no effect. A 3–5s flow and 3–5s pause is a sensible starting point. If your machine's pressure is pump-controlled, OPV adjustment applies.</p>`},
 
   {id:'puck',ico:'🫙',title:'Puck Preparation',sub:'Distribution, tamping, and what the puck tells you',
-   body:`<h3>Why puck prep matters</h3><p>The puck is the interface between machine and coffee. A poorly prepared puck creates channels — paths of least resistance where water flows preferentially, over-extracting those areas while leaving others under-extracted. The result is bitter + sour simultaneously — the hallmark of channeling. No grind adjustment fixes this. Ćejf detects the bitter + sour combination and flags distribution as the primary issue.</p>
+   body:`<h3>Why puck prep matters</h3><p>The puck is the interface between machine and coffee. A poorly prepared puck creates channels — paths of least resistance where water flows preferentially, over-extracting those areas while leaving others under-extracted. The result is bitter + sour simultaneously — the hallmark of channeling. Ćejf detects the combination — on darker roasts it flags distribution as the primary issue; on lighter roasts the usual root cause is grinding too fine, and the fix is coarser plus a longer ratio (see below).</p>
+<svg viewBox="0 0 340 130" style="width:100%;max-width:360px;display:block;margin:12px auto">
+  <g>
+    <path d="M32 34 L32 76 Q32 86 42 86 L128 86 Q138 86 138 76 L138 34" fill="none" stroke="var(--text3)" stroke-width="2"/>
+    <rect x="36" y="44" width="98" height="38" rx="4" fill="var(--gold)" opacity="0.16"/>
+    <line x1="36" y1="44" x2="134" y2="44" stroke="var(--gold)" stroke-width="1.4" opacity="0.7"/>
+    <g stroke="var(--blue)" stroke-width="1.5" stroke-linecap="round">
+      <line x1="55" y1="20" x2="55" y2="38"/><line x1="85" y1="20" x2="85" y2="38"/><line x1="115" y1="20" x2="115" y2="38"/>
+      <line x1="55" y1="92" x2="55" y2="106"/><line x1="85" y1="92" x2="85" y2="106"/><line x1="115" y1="92" x2="115" y2="106"/>
+    </g>
+    <text x="85" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="var(--green)" font-family="inherit">EVEN BED ✓</text>
+    <text x="85" y="122" text-anchor="middle" font-size="8" fill="var(--text4)" font-family="inherit">uniform flow everywhere</text>
+  </g>
+  <g transform="translate(170,0)">
+    <path d="M32 34 L32 76 Q32 86 42 86 L128 86 Q138 86 138 76 L138 34" fill="none" stroke="var(--text3)" stroke-width="2"/>
+    <path d="M36 44 L70 50 L84 44 L98 52 L134 46 L134 82 Q134 82 128 82 L42 82 Q36 82 36 82 Z" fill="var(--gold)" opacity="0.16"/>
+    <path d="M36 44 L70 50 L84 44 L98 52 L134 46" fill="none" stroke="var(--gold)" stroke-width="1.4" opacity="0.7"/>
+    <path d="M84 44 L82 82" stroke="var(--red)" stroke-width="2" stroke-dasharray="3 2"/>
+    <line x1="84" y1="18" x2="84" y2="38" stroke="var(--red)" stroke-width="3" stroke-linecap="round"/>
+    <line x1="83" y1="88" x2="83" y2="108" stroke="var(--red)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M83 108 L78 100 M83 108 L88 100" stroke="var(--red)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <text x="85" y="14" text-anchor="middle" font-size="10" font-weight="700" fill="var(--red)" font-family="inherit">CHANNEL ✗</text>
+    <text x="85" y="122" text-anchor="middle" font-size="8" fill="var(--text4)" font-family="inherit">water rushes one crack · sour + bitter</text>
+  </g>
+</svg>
+<h3>The finer you grind, the more prep matters</h3><p>Coarse beds are forgiving — fill, tap level, tamp, go. As grind gets finer, clumps and density differences matter more and more, which is exactly why distribution gadgets exploded once light roasts (ground very fine to chase 9 bar) arrived. Going coarser buys back forgiveness.</p>
+<h3>When the naked portafilter lies</h3><p>Sprays from a bottomless portafilter are a reliable alarm with dark roasts: their thick, viscous flow resists spritzing, so a jet means a real channel. With light roasts at fine grinds, some spritzing is nearly unavoidable and says little about the cup. Blonding arrives almost instantly on light roasts too, so “stop at blonding” stops meaning anything. A fast, ugly, crema-free modern shot can taste outstanding — judge by taste and ratio, not looks.</p>
 
 <h3>WDT (Weiss Distribution Technique)</h3><p>Before tamping, stir the grounds with a fine needle or WDT tool in a swirling motion through the full depth of the basket. This breaks up clumps (which cause channels) and distributes grounds evenly. A WDT tool with 0.3–0.4mm needles is ideal. Even a toothpick helps.</p>
 
-<h3>Tamping</h3><p>Apply consistent, level pressure — approximately 15–20kg. Level is more important than force. A tilted tamp creates a density gradient across the puck: water will always find the lowest-resistance path, which is the high side of the tilt. A calibrated spring tamper (like Normcore V4) removes the guesswork — it clicks at a preset pressure.</p>
+<h3>Tamping</h3><p>Apply consistent, level pressure — approximately 15–20kg. Level is more important than force. A tilted tamp creates a density gradient across the puck: water will always find the lowest-resistance path, which is the high side of the tilt. A calibrated spring tamper removes the guesswork — it clicks at a preset pressure, so every tamp is identical.</p>
 
 <h3>Reading the puck — what Ćejf tracks</h3><p><b>Dry and firm:</b> ideal. Even extraction, good preparation. <b>Dry and cracked:</b> puck expanded against the shower screen — overdosed or over-tamped. Reduce dose by 0.5g or tamp lighter. <b>Dry, detached from rim (⭕):</b> slight gap around the edge — under-dosed. Not alarming if taste is good, but try 0.5g more if sour or weak. <b>Wet and soggy:</b> puck collapsed — channeling, water found fast paths. Distribution issue. <b>Wet one side:</b> maldistribution — water channeled through the loose side. Fix with WDT. <b>Stuck to screen:</b> puck touching shower screen — overdosed. Reduce dose by 1g or use a deeper basket.</p>
 
 <h3>Basket geometry</h3><p>A VST, IMS, or other precision basket has consistent, machine-drilled holes. Stock baskets vary significantly. Upgrading the basket is a meaningful improvement — precision baskets have tighter hole tolerances and better flow distribution across the bottom, reducing channeling from uneven restriction.</p>`},
 
+  {id:'immersion',ico:'\U0001fad7',title:'Immersion vs Percolation',sub:'The two ways water meets coffee',
+   body:`<h3>Two mechanisms, one category</h3><p>Filter coffee splits into two families. <b>Percolation</b> \u2014 V60, Chemex, Kalita, auto-drip \u2014 passes water <i>through</i> a bed of grounds, which constantly meets fresh water and drains away. <b>Immersion</b> \u2014 French press, Clever, cupping, the steep phase of an AeroPress \u2014 steeps grounds <i>in</i> a fixed volume of water, then separates them.</p>
+<svg viewBox="0 0 340 150" style="width:100%;max-width:360px;display:block;margin:10px auto">
+  <g>
+    <path d="M48 30 L62 96 Q63 104 71 104 L101 104 Q109 104 110 96 L124 30" fill="none" stroke="var(--text3)" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M58 58 L68 98 Q69 100 71 100 L101 100 Q103 100 104 98 L114 58 Z" fill="var(--gold)" opacity="0.18"/>
+    <g stroke="var(--blue)" stroke-width="1.6" stroke-linecap="round"><line x1="74" y1="14" x2="74" y2="30"/><line x1="86" y1="14" x2="86" y2="30"/><line x1="98" y1="14" x2="98" y2="30"/></g>
+    <line x1="86" y1="108" x2="86" y2="126" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M86 126 L81 119 M86 126 L91 119" stroke="var(--blue)" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <text x="86" y="142" text-anchor="middle" font-size="9" font-weight="700" fill="var(--gold)" font-family="inherit">PERCOLATION</text>
+  </g>
+  <g transform="translate(170,0)">
+    <path d="M44 26 L44 104 Q44 112 52 112 L120 112 Q128 112 128 104 L128 26" fill="none" stroke="var(--text3)" stroke-width="2"/>
+    <rect x="48" y="46" width="76" height="62" rx="3" fill="var(--gold)" opacity="0.18"/>
+    <g fill="var(--text3)" opacity="0.6"><circle cx="62" cy="64" r="2.4"/><circle cx="80" cy="72" r="2.4"/><circle cx="98" cy="62" r="2.4"/><circle cx="110" cy="80" r="2.4"/><circle cx="70" cy="88" r="2.4"/><circle cx="92" cy="92" r="2.4"/></g>
+    <text x="86" y="142" text-anchor="middle" font-size="9" font-weight="700" fill="var(--gold)" font-family="inherit">IMMERSION</text>
+  </g>
+</svg>
+<h3>Why it changes your dial-in</h3><p>Percolation is flow-driven: grind size and pour technique set how fast water moves through, so a clogged or channelled bed wrecks the cup. Brew time is your master read \u2014 too fast is sour, too slow is bitter. Immersion is time-driven: every ground sits in water for the same duration regardless of grind, so it's far more forgiving of grind consistency. You control it mostly by steep time and grind coarseness. As a rule, immersion wants a slightly coarser grind than percolation for the same brewer size.</p>
+<h3>AeroPress sits in the middle</h3><p>It steeps like immersion, then you press it through a filter like percolation \u2014 which is why it's so flexible and why inverted vs standard methods taste different. Treat the steep time as the main lever.</p>`},
+  {id:'turkish',ico:'\u2615',title:'Turkish / Bosnian Coffee',sub:'No filter, no pressure \u2014 just heat and patience',
+   body:`<h3>A different tradition entirely</h3><p>Turkish-style coffee (also Bosnian, Greek, Armenian and more) uses the finest grind in all of coffee \u2014 a true flour-like powder \u2014 simmered with water in a small pot called a d\u017eezva (or cezve, ibrik). The grounds are never filtered out; they settle to the bottom and you sip the clear coffee above. It's brewed slowly and served with the prized foam, the kajmak, on top.</p>
+<h3>The methods vary by region and family</h3><p>There's no single \u201ccorrect\u201d way. Common variations: some add the coffee to <b>cold</b> water and heat together (this is the most common Bosnian approach and builds the best foam); some bring water to a boil <b>first</b>, then remove from heat and stir the coffee in; some return the pot to the heat to rise <b>two or three times</b> rather than once. Sugar habits vary too \u2014 much of the Balkans and Turkey drinks it sweet, and sugar always goes into the <b>cold</b> water so it dissolves and never scorches. \u0106ejf's Turkish mode offers these as selectable styles.</p>
+<h3>Getting it right</h3><p>Keep the heat <b>low</b> \u2014 patience is the whole technique. Let the foam build and rise toward the rim, then lift the pot before it boils over; returning it once or twice deepens the flavour. Boiling hard kills the foam and turns it bitter and burnt. Pour slowly so the grounds stay in the pot, then let the cup rest a few seconds before sipping so any stray sediment settles. If it's gritty, your grind wasn't fine enough or you didn't let it rest \u2014 not that you used too much.</p>`},
   {id:'origins',ico:'🌍',title:'Coffee Origins',sub:'How terroir shapes the cup',
    body:`<h3>Ethiopia</h3><p>Birthplace of Arabica. Yirgacheffe and Gedeo produce the world's most floral, tea-like coffees — jasmine, bergamot, lemon. Sidama and Guji run deeper with stone fruit and chocolate alongside citrus. Harrar naturals are wine-like and berry-forward. High chlorogenic acid content = prominent brightness. In Ćejf, Ethiopian beans are flagged as high-extraction-speed with a temperature recommendation of 92–94°C to avoid over-extracting the delicate aromatics.</p>
 
@@ -2487,6 +3175,14 @@ const TASTES_PO=[
   {id:'astringent',emoji:'🌿', lbl:'Astringent',     color:'#607040'},
   {id:'flat',      emoji:'📄', lbl:'Flat / Papery',  color:'#806040'},
 ];
+const TASTES_TK=[
+  {id:'weak',      emoji:'💧', lbl:'Weak / Thin',     color:'#5090c0'},
+  {id:'bitter',    emoji:'🍫', lbl:'Bitter / Burnt',  color:'#b04020'},
+  {id:'balanced',  emoji:'✨', lbl:'Balanced',        color:'#50a060'},
+  {id:'gritty',    emoji:'⚫', lbl:'Too gritty',      color:'#806040'},
+  {id:'flat',      emoji:'📄', lbl:'No foam',         color:'#607040'},
+  {id:'sour',      emoji:'🍋', lbl:'Sour / Weak-sour',color:'#c8a030'},
+];
 const CC2={grind:'#c8a84c',yield:'#5090c0',dose:'#50a060',temp:'#c05020',technique:'#607080',pressure:'#7050a0',bean:'#8a6820',info:'#50a060'};
 
 function buildPOSteps(brewer, dose, water, bloomTime, totalTime){
@@ -2664,6 +3360,10 @@ function buildFlags(){
   if(puck==='stuck_screen')flags.push({ico:'☝',msg:'Puck stuck to screen = overdosed. Reduce dose 1g or use deeper basket.'});
   if(puck==='grounds_rim')flags.push({ico:'💫',msg:'Grounds on rim = overdosed for this basket.'});
   // Pressure flags
+  if(MILK_DRINKS.has(drinkType)){
+    const mt=MILK_TYPES[milkType]||MILK_TYPES.whole;
+    flags.push({ico:'🥛',msg:'Milk drink — keep ratio ~1:1.8–2.0 so the shot cuts through milk; steam '+mt.lbl.toLowerCase()+' milk to '+mt.temp+'.'});
+  }
   if(P.opvActivated)flags.push({ico:'🔴',msg:`OPV activated at ${P.pressure.toFixed(1)} bar — pressure spike = channeling + astringency. Grind coarser before adjusting anything else.`});
   // Params flags
   if(time<20)flags.push({ico:'⚡',msg:`Fast (${time}s) — channeling or grind too coarse`});
@@ -2677,7 +3377,7 @@ function buildFlags(){
   if(C.daysOld!==null&&C.daysOld>35)flags.push({ico:'⚠',msg:`${C.daysOld} days old — beans may be stale`});
   if(RIG.portafilter==='bottomless')flags.push({ico:'👁',msg:'Bottomless PF: watch for uneven spray = channeling'});
   if(RIG.waterHardness==='hard')flags.push({ico:'🧪',msg:'Hard water can inhibit extraction — consider a filter'});
-  if(RIG.basketType==='vst'&&(time<22||time>38))
+  if(RIG.basketType==='vst'&&(time<curRecipe().tMin-3||time>curRecipe().tMax+3))
     flags.push({ico:'🎯',msg:`VST basket adds flow resistance — may need 2–3 clicks coarser vs stock`});
   if(RIG.basketType==='pesado'&&dose<basket*0.88)
     flags.push({ico:'🎯',msg:`Pesado deep basket — works best with higher dose (${(basket*0.93).toFixed(1)}g+)`});
@@ -2888,13 +3588,15 @@ function diagnosePO(t,po,b){
 }
 
 function diagnose(t,p,b,m,prevShot){
+  if(brewMode==='pourover'&&PO.brewer==='turkish') return diagnoseTK(t,b);
   if(brewMode==='pourover') return diagnosePO(t,PO,b);
 
   const{dose,time,temp,grind,tamp,distrib,preinf,prepause}=p;
   const yld=p.yield,ratio=yld/dose;
   const finer=n=>clicks2lbl(Math.max(0,grind-n)),coarser=n=>clicks2lbl(grind+n);
   const gLbl=clicks2lbl(grind);
-  const fst=time<22,slw=time>36;
+  const _rw=curRecipe();
+  const fst=time<_rw.tMin-3,slw=time>_rw.tMax+1;
   const tLight=tamp==='light',dPoor=distrib==='poor';
   const dRoast=b.roast==='dark';
   const under=dose<p.basket*0.82,over=dose>p.basket*1.05;
@@ -2911,8 +3613,8 @@ function diagnose(t,p,b,m,prevShot){
     return[
       {p:1,icon:'🔴',title:'OPV activated — grind coarser first',
         detail:`Pressure spiked to ${p.pressure.toFixed(1)} bar and activated the OPV valve. This causes channeling (uneven water paths) and thermal shock — explaining astringency, sourness, and bitterness simultaneously. Grind coarser (${gLbl} → ${coarser(5)}) to reduce puck resistance. The shot should stay under ${RIG.opv.toFixed(1)} bar without OPV activating.`,cat:'grind'},
-      {p:2,icon:'⏱',title:`Shot time: ${time}s${time>36?' — too slow':time<22?' — too fast':' — in range'}`,
-        detail:time>36?'Long shot + OPV = very high resistance puck. Grind significantly coarser — try 5+ clicks first, then re-evaluate.':time<22?'Fast shot + OPV = extreme channeling. Fix distribution and grind coarser together.':'Time is in range but OPV still activated = borderline resistance. 3–5 clicks coarser should eliminate the spike.',cat:'technique'},
+      {p:2,icon:'⏱',title:`Shot time: ${time}s${slw?' — too slow':fst?' — too fast':' — in range'}`,
+        detail:slw?'Long shot + OPV = very high resistance puck. Grind significantly coarser — try 5+ clicks first, then re-evaluate.':fst?'Fast shot + OPV = extreme channeling. Fix distribution and grind coarser together.':'Time is in range but OPV still activated = borderline resistance. 3–5 clicks coarser should eliminate the spike.',cat:'technique'},
       {p:3,icon:'🔧',title:`Lower OPV set point (currently ${RIG.opv.toFixed(1)} bar)`,
         detail:`If OPV continues activating after grind adjustment, lower the OPV set point in Machine settings. For specialty espresso, 8–9 bar is recommended. Your current setting of ${RIG.opv.toFixed(1)} bar may be too high for this grind.`,cat:'pressure'},
     ];
@@ -2943,8 +3645,8 @@ function diagnose(t,p,b,m,prevShot){
   // Contact time context for espresso
   // Shot time = proxy for water contact with puck
   // Ideal: 25–35s for most espresso (depends on ratio)
-  const contactShort=time<22; // under-extraction risk
-  const contactLong=time>36;  // over-extraction risk
+  const contactShort=fst; // under-extraction risk (recipe-aware)
+  const contactLong=slw;  // over-extraction risk (recipe-aware)
   const contactOk=!contactShort&&!contactLong;
 
   // Grind context with bean modifier
@@ -2954,17 +3656,30 @@ function diagnose(t,p,b,m,prevShot){
   };
 
   if(t==='sour'){
-    // UNDER-EXTRACTED: contact time too short for adequate compound dissolution
+    // UNDER-EXTRACTED: contact time too short. Grind finer + lower yield are the levers.
+    // Gate by shot time: if already slow and still sour, finer grind risks choking/channeling
+    // - redirect to temperature and bean factors instead.
     if(dPoor)recs.push({p:1,icon:'🔀',title:'Fix distribution — uneven contact time',
       detail:'Channeling creates fast paths through the puck. Water in channels has almost zero effective contact time with coffee. WDT before every tamp eliminates this. Grind changes cannot fix channeling.',cat:'technique'});
     if(tLight)recs.push({p:1.5,icon:'💪',title:'Firm tamp — inconsistent puck density',
       detail:'Soft tamp creates low-density zones that become channels. Press to full spring travel. Consistent density = consistent contact time across the puck.',cat:'technique'});
     if(!dPoor&&!tLight){
-      recs.push({p:demote('grind',1),icon:'⏱',title:'Grind finer — extend contact time',
-        detail:`Sour = water passing through puck too fast, extracting only the most soluble acids. ${grindCtx('finer',contactShort?15:10)}. ${contactShort?`Shot ran ${time}s — fast confirms short contact time.`:'Even at this shot time, extraction is incomplete.'}`,cat:'grind'});
+      if(slw){
+        // Already slow + still sour = finer won't help, likely temp or staleness/channeling
+        recs.push({p:1,icon:'🌡',title:'Slow + sour — don\'t grind finer',
+          detail:`Shot ran ${time}s (slow) yet still sour — grinding finer would choke it or cause channeling. The cause is elsewhere: raise temperature to ${Math.min(96,temp+2)}°C (especially for light roasts), check distribution, or suspect under-developed/very fresh beans.`,cat:'temp'});
+        recs.push({p:demote('yield',2),icon:'📏',title:'Lower yield — concentrate the cup',
+          detail:`Ratio 1:${ratio.toFixed(1)}. Pull to 1:2.0 (${(dose*2.0).toFixed(0)}g). A shorter, more concentrated shot reduces the perceived sourness without grinding finer.`,cat:'yield'});
+      } else {
+        recs.push({p:demote('grind',1),icon:'⏱',title:'Grind finer — first adjustment',
+          detail:`Sour = water passing through too fast, extracting only the most soluble acids. ${grindCtx('finer',contactShort?15:10)}. ${contactShort?`Shot ran ${time}s — fast confirms short contact time.`:'Even at this shot time, extraction is incomplete.'} Easiest change — try this first.`,cat:'grind'});
+        recs.push({p:demote('yield',2),icon:'📏',title:'Lower yield — concentrate extraction',
+          detail:`Ratio 1:${ratio.toFixed(1)}. Target 1:2.0–2.2 (${(dose*2.0).toFixed(0)}–${(dose*2.2).toFixed(0)}g). Less yield = more dissolved solids per ml = less sour. Quick lever alongside grind.`,cat:'yield'});
+      }
+    } else {
+      recs.push({p:demote('yield',2),icon:'📏',title:'Lower yield — concentrate extraction',
+        detail:`Ratio 1:${ratio.toFixed(1)}. Target 1:2.0–2.2 (${(dose*2.0).toFixed(0)}–${(dose*2.2).toFixed(0)}g). Less yield = more dissolved solids per ml = less sour.`,cat:'yield'});
     }
-    recs.push({p:demote('yield',2),icon:'📏',title:'Reduce yield — concentrate extraction',
-      detail:`Current ratio 1:${ratio.toFixed(1)}. Target 1:2.0–2.2 (${(dose*2.0).toFixed(0)}–${(dose*2.2).toFixed(0)}g). Less yield = more dissolved solids per ml = less sour. Fix yield before grind.`,cat:'yield'});
     if(bp.isHighDensity)recs.push({p:2.5,icon:'💎',title:`${density.label} bean needs longer contact`,
       detail:bp.grindNote+' Sour from dense beans often requires larger grind adjustments than you expect.',cat:'bean'});
     if(bp.isWashed)recs.push({p:4,icon:'🫘',title:'Washed process extracts fast',
@@ -2973,16 +3688,24 @@ function diagnose(t,p,b,m,prevShot){
       detail:'CO₂ in fresh beans forms a barrier that deflects water, reducing effective contact time. No grind adjustment fully compensates. Rest beans 7–14 days.',cat:'bean'});
   }
   else if(t==='bitter'){
-    // OVER-EXTRACTED: contact time too long, bitter compounds dissolving
-    if(contactLong){
-      recs.push({p:demote('grind',1),icon:'⏱',title:'Grind coarser — reduce contact time',
-        detail:`${time}s shot — long contact time is extracting slow-dissolving bitter compounds (chlorogenic acids, tannins). ${grindCtx('coarser',10)}. Faster flow = less bitter compound dissolution.`,cat:'grind'});
+    // OVER-EXTRACTED: contact time too long, bitter compounds dissolving.
+    // Grind + yield lead. But gate by shot time: fast + bitter = channeling, not over-extraction.
+    if(contactShort){
+      recs.push({p:1,icon:'🔀',title:'Fast + bitter = channeling, not over-extraction',
+        detail:`Shot ran ${time}s (fast) yet tastes bitter — water is channeling and over-extracting localised spots while rushing past the rest. Do NOT grind coarser. Fix distribution first (WDT, level tamp), then lower yield to cut the bitter tail.`,cat:'technique'});
+      recs.push({p:demote('yield',2),icon:'📏',title:'Lower yield meanwhile',
+        detail:`Ratio 1:${ratio.toFixed(1)} → pull shorter, 1:${Math.max(1.8,ratio-0.2).toFixed(1)} (${(dose*Math.max(1.8,ratio-0.2)).toFixed(0)}g). Cuts the bitter tail while you sort distribution.`,cat:'yield'});
+    } else if(contactLong){
+      recs.push({p:demote('grind',1),icon:'⏱',title:'Grind coarser — first adjustment',
+        detail:`${time}s shot — long contact time is extracting slow-dissolving bitter compounds (chlorogenic acids, tannins). ${grindCtx('coarser',10)}. Faster flow = less bitter dissolution. Easiest change — try this first.`,cat:'grind'});
+      recs.push({p:demote('yield',2),icon:'📏',title:'Or lower yield — cut the bitter tail',
+        detail:`Ratio 1:${ratio.toFixed(1)}. Pull shorter to 1:${Math.max(1.8,ratio-0.2).toFixed(1)} (${(dose*Math.max(1.8,ratio-0.2)).toFixed(0)}g). The bitter compounds come out at the end, so stopping earlier removes them. Quickest lever after grind.`,cat:'yield'});
     } else {
-      recs.push({p:demote('grind',1),icon:'⏱',title:'Grind coarser — reduce extraction depth',
-        detail:`${grindCtx('coarser',8)}. Even at normal shot time, this grind may be extracting too deeply into the bitter compound sequence.`,cat:'grind'});
+      recs.push({p:demote('grind',1),icon:'⏱',title:'Grind coarser — first adjustment',
+        detail:`${grindCtx('coarser',8)}. Even at normal shot time, this grind may be extracting too deeply into the bitter compounds. Easiest change — try this first.`,cat:'grind'});
+      recs.push({p:demote('yield',2),icon:'📏',title:'Or lower yield — cut the bitter tail',
+        detail:`Ratio 1:${ratio.toFixed(1)}. Pull shorter to 1:${Math.max(1.8,ratio-0.2).toFixed(1)} (${(dose*Math.max(1.8,ratio-0.2)).toFixed(0)}g). Removes the bitter end of the shot directly.`,cat:'yield'});
     }
-    recs.push({p:demote('yield',2),icon:'📏',title:'Pull longer — dilute bitter concentration',
-      detail:`Ratio 1:${ratio.toFixed(1)}. Increase to 1:${Math.min(2.8,ratio+0.3).toFixed(1)} (${(dose*(ratio+0.3)).toFixed(0)}g). More water dilutes extracted bitters without changing the extraction itself.`,cat:'yield'});
     if(over)recs.push({p:2,icon:'⚖',title:'Overdosed — uneven contact through puck',
       detail:`${dose}g overfills ${p.basket}g basket. Compressed puck forces water through irregularly, creating some very-long-contact zones. Try ${(p.basket*0.92).toFixed(1)}g.`,cat:'dose'});
     if(bp.isLowDensity)recs.push({p:1.5,icon:'💎',title:`${density.label} bean — hits bitterness fast`,
@@ -3013,26 +3736,49 @@ function diagnose(t,p,b,m,prevShot){
       detail:'Dense beans have abundant soluble compounds. If still weak after yield fix, the contact time is insufficient — grind finer.',cat:'bean'});
   }
   else if(t==='astringent'){
-    recs.push({p:1,icon:'🔧',title:'Lower OPV — reduce pressure spike',
-      detail:'High pressure extracts phenolic compounds (tannins) rapidly at the start of the shot. Lower OPV to 8–8.5 bar to slow initial extraction rate. Most impactful fix for harshness.',cat:'pressure'});
-    recs.push({p:demote('grind',2),icon:'⏱',title:'Grind coarser — reduce overall contact time',
-      detail:`${grindCtx('coarser',8)}. Harsh/dry finish = extended contact dissolving bitter phenolics. Shorter contact time (faster flow) reduces their proportion.`,cat:'grind'});
-    if(dPoor)recs.push({p:1.5,icon:'🔀',title:'Distribution — localised over-contact',
-      detail:'Dense spots in the puck have extremely long effective contact time — water lingers, over-extracting phenolics locally. WDT creates uniform contact throughout.',cat:'technique'});
-    recs.push({p:3,icon:'⏱',title:'Enable pre-infusion',
-      detail:'Pre-infusion wets grounds at low pressure before full pump pressure. This gradual ramp avoids the pressure spike that force-extracts tannins in the first few seconds.',cat:'pressure'});
-    if(bp.isNatural)recs.push({p:2,icon:'🫘',title:'Natural process — uneven contact causes harsh spots',
-      detail:'Natural coffees have fermented fruit compounds that extract harshly when contact is uneven. Distribution is even more critical than with washed coffees.',cat:'bean'});
+    // Harsh/dry/astringent = over-extraction of phenolics OR pressure/channeling.
+    // Lead with grind + yield (the instant levers). Gate grind by shot time:
+    // if shot already fast, coarser would worsen it - redirect to yield + other params.
+    if(!fst){
+      recs.push({p:demote('grind',1),icon:'⏱',title:'Grind coarser - first adjustment',
+        detail:`${grindCtx('coarser',8)}. Harsh/dry finish = over-extraction of bitter phenolics. ${slw?`Shot ran ${time}s (slow) - coarser grind speeds flow and cuts the harsh tail.`:'Coarser grind reduces the proportion of phenolics extracted.'} Easiest change to make - try this first.`,cat:'grind'});
+      recs.push({p:demote('yield',2),icon:'📏',title:'Lower yield - cut the harsh tail',
+        detail:`Ratio 1:${ratio.toFixed(1)}. Stop the shot earlier - try 1:${Math.max(1.8,ratio-0.3).toFixed(1)} (${(dose*Math.max(1.8,ratio-0.3)).toFixed(0)}g). Astringent compounds come out at the end of the shot, so a shorter pull removes them directly.`,cat:'yield'});
+    } else {
+      recs.push({p:1,icon:'🔀',title:'Fast + harsh = channeling, not over-extraction',
+        detail:`Shot ran ${time}s (fast) yet tastes harsh - this is channeling, not over-extraction. Do NOT grind coarser (it would worsen it). Water is forcing through cracks, over-extracting those spots while rushing past the rest. Fix distribution first: WDT, level the bed, even tamp.`,cat:'technique'});
+      recs.push({p:demote('yield',2),icon:'📏',title:'Lower yield meanwhile',
+        detail:`Ratio 1:${ratio.toFixed(1)}. A shorter pull (1:${Math.max(1.8,ratio-0.3).toFixed(1)}, ${(dose*Math.max(1.8,ratio-0.3)).toFixed(0)}g) cuts the harsh tail while you sort distribution.`,cat:'yield'});
+    }
+    if(dPoor)recs.push({p:1.5,icon:'🔀',title:'Distribution - localised over-contact',
+      detail:'Dense spots in the puck linger with water, over-extracting phenolics locally. WDT creates uniform contact throughout.',cat:'technique'});
+    recs.push({p:5,icon:'🔧',title:'Then check OPV / pressure',
+      detail:`If harshness persists after grind, yield and distribution are sorted, lower OPV to 8-8.5 bar. High pressure force-extracts phenolics early in the shot. Slower fix - use the grind/yield levers first.`,cat:'pressure'});
+    recs.push({p:5.5,icon:'⏱',title:'Pre-infusion (secondary)',
+      detail:'Pre-infusion wets grounds gently before full pressure, avoiding the spike that force-extracts tannins. Worth enabling once the quick levers are exhausted.',cat:'pressure'});
+    if(bp.isNatural)recs.push({p:3,icon:'🫠',title:'Natural process - harsh when contact is uneven',
+      detail:'Natural coffees have fermented compounds that extract harshly when contact is uneven. Distribution matters even more than with washed coffees.',cat:'bean'});
+    if(stale)recs.push({p:3.5,icon:'⏰',title:`${b.daysOld}d old - papery/harsh from staleness`,
+      detail:'Oxidised beans taste papery and harsh regardless of technique. If grind and yield changes do not help, suspect the beans - a fresh bag confirms.',cat:'bean'});
   }
   else if(t==='burnt'){
-    recs.push({p:1,icon:'⏱',title:'Grind coarser — reduce contact time',
-      detail:`Scorched/burnt = thermal over-extraction in the first seconds of flow. ${grindCtx('coarser',10)}. Faster initial flow reduces the time hot water contacts dry grounds.`,cat:'grind'});
-    recs.push({p:2,icon:'📏',title:'Pull longer to dilute burnt notes',
-      detail:`Try 1:${Math.min(2.8,ratio+0.3).toFixed(1)} (${(dose*(ratio+0.3)).toFixed(0)}g) to dilute the concentrated burnt compounds.`,cat:'yield'});
-    recs.push({p:3,icon:'⏱',title:'Add pre-infusion — gradual pressure ramp',
-      detail:'Pre-infusion prevents the full-pressure contact on dry, hot grounds that causes scorching in the first few seconds.',cat:'pressure'});
-    if(dRoast)recs.push({p:2,icon:'🫘',title:'Dark roast + high contact = burnt',
-      detail:'Dark-roasted porous beans hit scorch compounds fast. Coarser grind is essential — even moderate contact time over-extracts dark roasts.',cat:'bean'});
+    // Burnt = thermal over-extraction. Grind coarser + lower yield lead.
+    // Gate: if already fast, coarser worsens it - it's heat/roast, not grind.
+    if(!fst){
+      recs.push({p:demote('grind',1),icon:'⏱',title:'Grind coarser — first adjustment',
+        detail:`Scorched/burnt = over-extraction. ${grindCtx('coarser',10)}. Faster flow reduces contact time with the grounds. Easiest change — try this first.`,cat:'grind'});
+      recs.push({p:demote('yield',2),icon:'📏',title:'Lower yield — cut the burnt tail',
+        detail:`Ratio 1:${ratio.toFixed(1)}. Pull shorter to 1:${Math.max(1.8,ratio-0.2).toFixed(1)} (${(dose*Math.max(1.8,ratio-0.2)).toFixed(0)}g). The burnt, over-extracted compounds come out at the end — stopping earlier removes them.`,cat:'yield'});
+    } else {
+      recs.push({p:1,icon:'🌡',title:'Fast + burnt — lower temperature, not grind',
+        detail:`Shot ran ${time}s (fast) yet tastes burnt — grinding coarser would speed it up further and worsen it. This is heat or roast driven: lower temperature to ${Math.max(88,temp-3)}°C. ${dRoast?'Dark roast amplifies this.':''}`,cat:'temp'});
+      recs.push({p:demote('yield',2),icon:'📏',title:'Lower yield meanwhile',
+        detail:`Ratio 1:${ratio.toFixed(1)} → 1:${Math.max(1.8,ratio-0.2).toFixed(1)} (${(dose*Math.max(1.8,ratio-0.2)).toFixed(0)}g). Cuts the burnt tail directly.`,cat:'yield'});
+    }
+    recs.push({p:4,icon:'⏱',title:'Pre-infusion (secondary)',
+      detail:'Pre-infusion prevents full-pressure contact on dry, hot grounds that causes scorching. Worth enabling once the quick levers are tried.',cat:'pressure'});
+    if(dRoast)recs.push({p:2.5,icon:'🫘',title:'Dark roast + high contact = burnt',
+      detail:'Dark-roasted porous beans hit scorch compounds fast. Coarser grind and lower temperature both help.',cat:'bean'});
   }
   else if(t==='balanced'){
     recs.push({p:1,icon:'✨',title:'Dialled in',
@@ -3126,6 +3872,21 @@ function combinationOverride(combo,p,po){
   const grind=brewMode==='pourover'?po.grind:p.grind;
   const keep=()=>clicks2lbl(grind);
   if(combo.key==='bitter_sour'){
+    const lightish=brewMode==='espresso'&&['light','medium-light','medium'].indexOf(C.roast||'')>=0;
+    if(lightish){
+      const zone=getGrinderRange('esp');
+      const span=Math.max(6,zone.max-zone.min);
+      const step=Math.max(4,Math.round(span*0.12));
+      const coarserVal=clicks2lbl(Math.min(zone.max,grind+step));
+      const longerYld=(dose*2.7).toFixed(0);
+      return{
+        grind:{dir:'↑ Coarser',val:coarserVal,color:'#c08030',
+          why:'Bitter ('+combo.biv+'/5) + sour ('+combo.siv+'/5) on a '+(C.roast||'lighter')+' roast usually means the grind is already too fine. Dense, low-fines lighter roasts ground fine enough to chase 9 bar become near-impermeable: water finds cracks that over-extract (bitter) while the rest of the bed stays under-extracted (sour). Going coarser restores even flow — distribution tools only patch the symptom.'},
+        yield:{dir:'↑ Longer',val:longerYld+'g',color:'#607040',
+          why:'Pair the coarser grind with a longer ratio (1:2.5–3) to keep total extraction high. Expect a faster, uglier, low-crema shot — judge it by taste. The Modern light preset in Shot Parameters sets this up.'},
+        banner:'Lighter roast + bitter & sour = too fine, not bad prep. Go coarser and extend the ratio — expect a fast, ugly, tasty shot.'
+      };
+    }
     return{
       grind:{dir:'⚠ Fix distribution first',val:keep(),color:'#c08030',
         why:'Bitter ('+combo.biv+'/5) and sour ('+combo.siv+'/5) together = uneven extraction = channeling. Water over-extracts dense areas (bitter) while bypassing loose areas (sour). Changing grind won\'t fix this — distribution is the root cause.'},
@@ -3189,7 +3950,7 @@ function getGrindYieldDir(t,p,b){
   const finer=n=>clicks2lbl(Math.max(0,p.grind-n));
   const coarser=n=>clicks2lbl(p.grind+n);
   const keep=()=>clicks2lbl(p.grind);
-  const fast=time<22,optimal=time>=22&&time<=36,slow=time>36;
+  const _gw=curRecipe(),_lo=_gw.tMin-3,_hi=_gw.tMax+1;const fast=time<_lo,optimal=time>=_lo&&time<=_hi,slow=time>_hi;
   const loRatio=ratio<1.9,okRatio=ratio>=1.9&&ratio<=2.5,hiRatio=ratio>2.5;
   const opvSpike=p.opvActivated;
   const stepNote=iv<=2?' (subtle — conservative step)':iv>=4?' (strong — larger step)':'';
@@ -3831,6 +4592,7 @@ function renderMachine(){
           <div class="plbl" style="margin-bottom:4px">GRINDER</div>
           <div class="sel-wrap" style="margin-bottom:0"><select onchange="setGrinder(this.value);renderMachine()">
             ${Object.entries(GRINDERS).map(([k,gr])=>`<option value="${k}"${k===RIG.grinder?' selected':''}>${gr.name}</option>`).join('')}
+            <option value="nogrinder"${RIG.grinder==='nogrinder'?' selected':''}>No grinder / pre-ground</option>
             <option value="custom_grinder"${RIG.grinder==='custom_grinder'?' selected':''}>+ Add custom grinder</option>
           </select></div>
           ${RIG.grinder==='custom_grinder'?`
@@ -3967,12 +4729,93 @@ function primaryTaste(){
   return ids.reduce((a,b)=>tastes[a]>=tastes[b]?a:b);
 }
 const MILK_DRINKS=new Set(['cappuccino','flat_white','macchiato','cortado','other_drink']);
+
+function grindLabelHint(){
+  const isTk=(brewMode==='pourover'&&PO.brewer==='turkish');
+  const rec=brewMode==='espresso'?'Fine':(isTk?'Extra-fine (powder)':'Medium');
+  return 'Recommended for '+(brewMode==='espresso'?'espresso':(isTk?'Turkish':'filter'))+': <b style="color:var(--gold)">'+rec+'</b>. Pre-ground or hand-dialed — pick what matches your bag.';
+}
+
+// Turkish diagnostics — simple, mechanism-based
+function diagnoseTK(t,b){
+  const recs=[];
+  if(t==='weak'){
+    recs.push({title:'Use more coffee, or a finer grind',detail:'Turkish should be intense. Add up to 1:8 coffee-to-water, and make sure the grind is true powder \u2014 finer than espresso. Coarser-than-powder grounds under-extract badly with no pressure to help.',cat:'dose'});
+    recs.push({title:'Heat more slowly',detail:'A slow rise gives the water more contact time with the grounds. Rushing it on high heat under-extracts and kills the foam.',cat:'technique'});
+  } else if(t==='sour'){
+    recs.push({title:'Slower heat, let it rise twice',detail:'Sourness here is under-extraction. Keep the heat low and let the coffee rise (foam to the rim) two or three times rather than one fast boil.',cat:'technique'});
+    recs.push({title:'A touch more coffee',detail:'Nudge the dose up so the cup has more to give. Powder-fine grind is essential.',cat:'dose'});
+  } else if(t==='bitter'){
+    recs.push({title:'Lower the heat, fewer rises',detail:'Bitter/burnt = overcooked. Use gentler heat and let it rise only once or twice. Never let it fully boil \u2014 lift it off as the foam reaches the rim.',cat:'technique'});
+    recs.push({title:'Slightly less coffee',detail:'If it stays harsh, ease the dose down a little toward 1:11\u20131:12.',cat:'dose'});
+  } else if(t==='gritty'){
+    recs.push({title:'Let it settle longer before sipping',detail:'Rest the cup 30\u201360 seconds so the fine grounds sink. Pour slowly and steadily to avoid stirring sediment up.',cat:'technique'});
+    recs.push({title:'Grind must be powder-fine, not just fine',detail:'Ironically, grounds that are not fine enough settle worse and feel grittier. True Turkish grind is flour-like.',cat:'bean'});
+  } else if(t==='flat'){
+    recs.push({title:'Start from cold water and go slow',detail:'Foam (kajmak) builds during a slow rise from cold. Combine coffee and cold water, stir once, then heat gently and don\u2019t stir again.',cat:'technique'});
+    recs.push({title:'Spoon the first foam into the cup',detail:'As the foam first rises, spoon some into each cup before returning the d\u017eezva to the heat. This preserves it.',cat:'technique'});
+  } else if(t==='balanced'){
+    recs.push({title:'Dialed in \u2014 note this style',detail:'Good foam, clean strength, settled grounds. Remember this dose, water and heat level for next time.',cat:'info'});
+  }
+  if(b&&b.daysOld!=null&&b.daysOld>45)recs.push({title:b.daysOld+'d old \u2014 freshness fades foam',detail:'Older coffee makes thinner foam and a flatter cup regardless of technique. Fresh grounds rise better.',cat:'bean'});
+  return recs;
+}
+
+
+// ============ ESPRESSO RECIPES ============
+const ESP_RECIPES={
+  standard:{lbl:'Standard',ratio:2.0,tMin:25,tMax:35,grindAdj:0,desc:'The reference shot \u2014 balanced sweetness, acidity and body. Aim 1:2 in 25\u201335s.'},
+  ristretto:{lbl:'Ristretto',ratio:1.4,tMin:20,tMax:30,grindAdj:-0.05,desc:'Short and syrupy \u2014 concentrated sweetness, muted bitterness. Grind a touch finer.'},
+  lungo:{lbl:'Lungo',ratio:2.8,tMin:35,tMax:45,grindAdj:0.05,desc:'Longer and lighter-bodied \u2014 more extracted, with a gentle pleasant bitterness.'},
+  turbo:{lbl:'Turbo',ratio:2.5,tMin:12,tMax:18,grindAdj:0.3,desc:'Coarse grind, fast flow, ideally ~6 bar \u2014 juicy clarity, high extraction, very low bitterness.'},
+  modern:{lbl:'Modern light',ratio:3.0,tMin:8,tMax:18,grindAdj:0.35,desc:'For light roasts: coarse, full pump flow, 1:3+. Fast and ugly with no crema \u2014 judged by taste, not looks. Time varies with your pump flow rate.'},
+  blooming:{lbl:'Blooming',ratio:2.0,tMin:40,tMax:60,grindAdj:0,desc:'Long low-pressure soak, then pull \u2014 rounder and sweeter; shines with light roasts.'},
+  salami:{lbl:'Salami',ratio:3.0,tMin:35,tMax:50,grindAdj:0,desc:'One long pull split into 3\u20134 cups in sequence \u2014 taste each to find where sweetness ends and bitterness begins. The fastest way to pick your yield.'},
+};
+function curRecipe(){return ESP_RECIPES[P.recipe]||ESP_RECIPES.standard;}
+function selectRecipe(k){
+  if(!ESP_RECIPES[k])return;
+  P.recipe=k;const r=ESP_RECIPES[k];
+  P.yield=Math.round(P.dose*r.ratio*10)/10;
+  persist();updateChips();renderRecipeRow();renderDialIn();
+  if(typeof openParamsSheet._refresh==='function')openParamsSheet._refresh();
+  flashToast(r.lbl+' \u00b7 1:'+r.ratio+' in '+r.tMin+'\u2013'+r.tMax+'s');
+}
+function renderRecipeRow(){
+  const host=document.getElementById('recipe-row');if(!host)return;
+  if(brewMode!=='espresso'){host.style.display='none';return;}
+  host.style.display='block';
+  const cur=P.recipe||'standard';
+  host.innerHTML='<div class="rc-pills">'
+    +Object.keys(ESP_RECIPES).map(k=>'<button class="rc-pill'+(k===cur?' on':'')+'" onclick="selectRecipe(\''+k+'\')">'+ESP_RECIPES[k].lbl+'</button>').join('')
+    +'</div><div class="rc-desc">'+ESP_RECIPES[cur].desc+'</div>';
+}
+
+// ============ MILK SYSTEM ============
+const MILK_TYPES={
+  whole:{lbl:'Whole',temp:'60\u201365\u00b0C',note:'Classic microfoam \u2014 lactose sweetens as it warms; fat carries the coffee aromatics.'},
+  semi:{lbl:'Semi-skimmed',temp:'60\u201365\u00b0C',note:'Foams readily, lighter mouthfeel \u2014 stretch slightly less air than whole.'},
+  oat:{lbl:'Oat',temp:'55\u201360\u00b0C',note:'Barista oat textures best of the plant milks \u2014 it thins and splits past ~65\u00b0C.'},
+  almond:{lbl:'Almond',temp:'55\u201360\u00b0C',note:'Steam gently and stop early \u2014 it separates when overheated.'},
+  soy:{lbl:'Soy',temp:'55\u201360\u00b0C',note:'Keep it cooler \u2014 soy can curdle against bright, acidic coffees.'},
+};
+let milkType=ld('milkType','whole')||'whole';
+function setMilkType(k){milkType=k;sv('milkType',k);renderMilk();}
+function renderMilk(){
+  const pills=document.getElementById('milk-pills');
+  const hint=document.getElementById('milk-hint');
+  if(!pills||!hint)return;
+  pills.innerHTML=Object.keys(MILK_TYPES).map(k=>
+    '<button class="milk-pill'+(k===milkType?' on':'')+'" onclick="setMilkType(\''+k+'\')">'+MILK_TYPES[k].lbl+'</button>').join('');
+  const mt=MILK_TYPES[milkType];
+  hint.textContent='Steam to '+mt.temp+' \u2014 '+mt.note;
+}
 function setDrinkType(t){
   drinkType=t;
-  document.querySelectorAll('.drink-circle').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.drink-pill').forEach(b=>b.classList.remove('on'));
   const btn=document.getElementById('dp-'+t);if(btn)btn.classList.add('on');
-  const note=document.getElementById('milk-note');
-  if(note)note.style.display=MILK_DRINKS.has(t)?'block':'none';
+  const mp=document.getElementById('milk-panel');
+  if(mp){mp.style.display=MILK_DRINKS.has(t)?'block':'none';if(MILK_DRINKS.has(t))renderMilk();}
 }
 function renderTasteGrid(){
   const list=brewMode==='pourover'?TASTES_PO:TASTES_ESP;
@@ -3980,7 +4823,7 @@ function renderTasteGrid(){
   grid.innerHTML=list.map(t=>{
     const on=tastes[t.id]!==undefined;
     const mark=`<div class="tb-ico" style="filter:${on?'saturate(0.75) brightness(0.9)':'saturate(0.25) opacity(0.6)'};transition:filter 0.2s">${t.emoji}</div>`;
-    return`<button class="tb${on?' on':''}" onclick="toggleTaste('${t.id}')" style="${on?'border-color:'+t.color+';background:'+t.color+'18;':''}">`
+    return`<button class="tb${on?' on':''}" onclick="toggleTaste('${t.id}')" style="${on?'background:'+t.color+'1f;':''}">`
       +mark+`<div class="tb-lbl"${on?` style="color:${t.color}"`:''}>${t.lbl}</div></button>`;
   }).join('');
   renderTasteIntensities();
@@ -4103,83 +4946,88 @@ function togglePuckPanel(){
 }
 
 // ══ DIAGNOSTICS ══════════════════════════════════════════════════════════════
+let _dxShown=false;
+const DX_VERDICTS={
+  sour:'Under-extracted \u2014 water moved through too fast.',
+  bitter:'Over-extracted \u2014 contact ran too long.',
+  balanced:'Dialed in \u2014 this is the zone. Note these settings.',
+  weak:'Under-strength \u2014 the cup is too dilute.',
+  astringent:'Phenolic harshness \u2014 pressure or uneven contact.',
+  burnt:'Thermal over-extraction \u2014 heat is scorching the grounds.',
+  flat:'Aromatics missing \u2014 freshness is the first suspect.',
+};
 function renderDiag(){
-  const area=document.getElementById('diag-area');if(!area||!primaryTaste())return;
+  const area=document.getElementById('diag-area');if(!area)return;
   const pt=primaryTaste();
+  if(!pt){area.innerHTML='';_dxShown=false;return;}
   const prevShot=getLastSameTaste(pt);
   const recs=diagnose(pt,P,C,M,prevShot);
-  const tObj=(brewMode==='pourover'?TASTES_PO:TASTES_ESP).find(t=>t.id===pt);
+  const allTastes=(brewMode==='pourover'&&PO.brewer==='turkish')?TASTES_TK:(brewMode==='pourover'?TASTES_PO:TASTES_ESP);
+  const tObj=allTastes.find(t=>t.id===pt);
   if(!tObj){area.innerHTML='';return;}
-  const allTastes=brewMode==='pourover'?TASTES_PO:TASTES_ESP;
-  const selectedTasteLabels=Object.keys(tastes).map(id=>{
+  const chips=Object.keys(tastes).map(id=>{
     const t=allTastes.find(x=>x.id===id);
     return t?'<span style="color:'+t.color+'"><span style="filter:saturate(0.7) brightness(0.9)">'+t.emoji+'</span> '+t.lbl+'</span>':'';
-  }).filter(Boolean).join(' \u00b7 ');
+  }).filter(Boolean).join('');
   const flags=buildFlags();
   const dir=brewMode==='pourover'?getPOGrindYieldDir(pt,PO,C):getGrindYieldDir(pt,P,C);
-  // History: did user already move grind in the recommended direction?
-  const grindDir=dir?.grind?.dir||'';
-  const recFiner=grindDir.toLowerCase().includes('finer');
-  const recCoarser=grindDir.toLowerCase().includes('coarser');
-  const grindTried=(recFiner&&grindAlreadyMoved('finer',prevShot))||(recCoarser&&grindAlreadyMoved('coarser',prevShot));
-  const suppressGrind=grindTried;
-  const historyNote=grindTried&&prevShot
-    ?'<div style="font-size:11px;color:var(--blue);background:rgba(90,143,184,0.1);border:1px solid rgba(90,143,184,0.2);border-radius:var(--r-sm);padding:7px 10px;margin-bottom:8px">'
-      +'\ud83d\udd04 Grind already moved '+(recFiner?'finer':'coarser')+' since last '+pt+' shot and still '+pt
-      +'. <b>Shift focus to yield</b> \u2014 grind may be at its limit for this bean.</div>'
-    :'';
-  // Build primary action cards
-  let topHTML='';
-  if(dir){
-    topHTML='<div class="diag-primary">';
-    if(!suppressGrind){
-      topHTML+='<div class="diag-pcard" style="border-color:'+dir.grind.color+'">'
-        +'<div class="diag-pcard-key">GRIND</div>'
-        +'<div class="diag-pcard-dir" style="color:'+dir.grind.color+'">'+dir.grind.dir+'</div>'
-        +'<div class="diag-pcard-val">'+dir.grind.val+'</div>'
-        +'<div class="diag-pcard-why">'+dir.grind.why+'</div>'
-        +'</div>';
-    }
-    const yStyle='border-color:'+dir.yield.color+(suppressGrind?';flex:2':'');
-    const yWhy=suppressGrind?'Grind already tried \u2014 focus here. '+dir.yield.why:dir.yield.why;
-    topHTML+='<div class="diag-pcard" style="'+yStyle+'">'
-      +'<div class="diag-pcard-key">'+(brewMode==='pourover'?'WATER':'YIELD')+'</div>'
-      +'<div class="diag-pcard-dir" style="color:'+dir.yield.color+'">'+dir.yield.dir+'</div>'
-      +'<div class="diag-pcard-val">'+dir.yield.val+'</div>'
-      +'<div class="diag-pcard-why">'+yWhy+'</div>'
-      +'</div>'
+  const gd=(dir&&dir.grind)||null,yd=(dir&&dir.yield)||null;
+  const gDirTxt=((gd&&gd.dir)||'').toLowerCase();
+  const grindTried=(gDirTxt.includes('finer')&&grindAlreadyMoved('finer',prevShot))
+                 ||(gDirTxt.includes('coarser')&&grindAlreadyMoved('coarser',prevShot));
+  const verdict=DX_VERDICTS[pt]||'';
+
+  const lever=(key,dirTxt,col,val,why)=>'<div class="dx-card" onclick="toggleDx(this)">'
+    +'<div class="dx-k">'+key+'</div><span class="dx-chev">\u203a</span>'
+    +'<div class="dx-dir" style="color:'+col+'">'+dirTxt+'</div>'
+    +(val?'<div class="dx-val">'+val+'</div>':'')
+    +(why?'<div class="dx-why">'+why+'</div>':'')
+    +'</div>';
+  let strip='';
+  if(gd&&yd){
+    const curGrind=clicks2lbl(brewMode==='pourover'?PO.grind:P.grind);
+    const gWhy=grindTried
+      ?('Already moved '+(gDirTxt.includes('finer')?'finer':'coarser')+' since your last '+pt+' shot and it still tastes '+pt+'. Hold grind here \u2014 it may be at its limit for this bean \u2014 and work the yield lever instead.')
+      :(gd.why||'');
+    const yWhy=(grindTried?'Grind already tried \u2014 focus here. ':'')+(yd.why||'');
+    strip='<div class="dx-strip">'
+      +lever('GRIND',grindTried?'\u2713 Hold':gd.dir,grindTried?'var(--text3)':(gd.color||'var(--gold)'),grindTried?curGrind:(gd.val||''),gWhy)
+      +lever(brewMode==='pourover'?'WATER':'YIELD',yd.dir,yd.color||'var(--gold)',yd.val||'',yWhy)
       +'</div>';
   }
-  const visibleRecs=recs.filter(r=>!r.isBanner&&r.cat!=='grind');
+
+  const items=[];
   const triedBanner=recs.find(r=>r.isBanner);
-  const flagsHTML=flags.length?'<div class="diag-flags">'+flags.map(f=>'<div class="diag-flag"><span>'+f.ico+'</span><span>'+f.msg+'</span></div>').join('')+'</div>':'';
-  const recsHTML=visibleRecs.map((r,i)=>'<div class="diag-rec" id="drec-'+i+'" onclick="toggleRec('+i+')" style="animation-delay:'+(i*0.05)+'s">'
-    +'<div class="diag-rec-row">'
-    +'<div class="diag-rec-ico">'+r.icon+'</div>'
-    +'<div class="diag-rec-title" style="color:'+(CC2[r.cat]||'var(--gold)')+'">'+r.title+'</div>'
-    +'<div class="diag-rec-cat">'+r.cat+'</div>'
-    +'<div class="diag-rec-chevron">\u203a</div>'
-    +'</div>'
-    +'<div class="diag-rec-detail">'+r.detail+'</div>'
-    +'</div>').join('');
-  area.innerHTML='<div class="diag-card" style="border-top-color:'+tObj.color+'">'
-    +'<div class="diag-hdr">'
-    +'<span style="font-size:22px;line-height:1">'+tObj.emoji+'</span>'
-    +'<div><div class="diag-title">'+selectedTasteLabels+'</div>'
-    +'<div class="diag-sub">Tap any rec to expand reasoning</div></div>'
-    +'</div>'
-    +topHTML
-    +historyNote
-    +(dir?.banner?'<div class="diag-tried" style="background:rgba(180,130,50,0.08);border-color:rgba(180,130,50,0.2);color:var(--amber)">⚡ '+dir.banner+'</div>':'')
-    +(triedBanner?'<div class="diag-tried">\ud83d\udd04 '+triedBanner.detail+'</div>':'')
-    +flagsHTML
-    +'<div class="diag-body">'+recsHTML+'</div>'
+  if(triedBanner)items.push({title:'Compared with your previous shot',detail:triedBanner.detail,cat:'info'});
+  recs.filter(r=>!r.isBanner&&r.cat!=='grind'&&r.cat!=='yield').forEach(r=>items.push(r));
+  flags.forEach(f=>items.push({title:f.msg,detail:f.msg,cat:'flag'}));
+  const _combo=(typeof detectCombination==='function')?detectCombination():null;
+  if(_combo&&_combo.key==='bitter_sour'&&brewMode==='espresso'&&['light','medium-light','medium'].indexOf(C.roast||'')>=0){
+    items.unshift({title:'Lighter roast? Coarser + longer is the real fix',detail:'9-bar / 1:2 espresso was designed in 1948 around dark roasts — brittle, fines-heavy, CO₂-rich beans with built-in puck resistance. Dense, low-fines lighter roasts ground fine enough to reach 9 bar extract unevenly: cracks over-extract (bitter) while the bed stays under-extracted (sour). Go coarser, pull 1:2.5–3, accept a fast low-crema shot — try the Modern light preset in Shot Parameters.',cat:'bean'});
+  }
+  const catCol={technique:'var(--blue)',bean:'var(--green)',temp:'var(--red)',pressure:'var(--amber)',dose:'var(--gold)',info:'var(--text4)',flag:'var(--amber)'};
+  const seen=new Set();
+  const rows=items.filter(it=>{const k=(it.title||'').slice(0,40);if(!k||seen.has(k))return false;seen.add(k);return true;}).slice(0,6)
+    .map((it,i)=>'<div class="dx-row" style="animation-delay:'+(0.22+i*0.06).toFixed(2)+'s"><button class="dx-row-head" onclick="toggleDx(this.parentElement)">'
+      +'<span class="dx-num">'+(i+1)+'</span>'
+      +'<span class="dx-dot" style="background:'+(catCol[it.cat]||'var(--text4)')+'"></span>'
+      +'<span class="dx-row-title">'+it.title+'</span>'
+      +'<span class="dx-rchev">\u203a</span></button>'
+      +'<div class="dx-row-detail">'+it.detail+'</div></div>').join('');
+
+  area.innerHTML='<div class="dx-wrap">'
+    +'<div class="dx-head"><div class="session-label" style="margin:0">Diagnosis</div><div class="dx-tastes">'+chips+'</div></div>'
+    +(verdict?'<div class="dx-verdict" style="color:'+tObj.color+'">'+verdict+'</div>':'')
+    +strip
+    +(dir&&dir.banner?'<div class="dx-alert"><span>\u26a1</span><span>'+dir.banner+'</span></div>':'')
+    +(rows?'<div class="dx-list">'+rows+'</div>':'')
     +'</div>';
+  if(!_dxShown){
+    _dxShown=true;
+    setTimeout(()=>{try{area.scrollIntoView({behavior:'smooth',block:'nearest'});}catch(e){}},120);
+  }
 }
-function toggleRec(i){
-  const el=document.getElementById('drec-'+i);if(!el)return;
-  el.classList.toggle('open');
-}
+function toggleDx(el){if(el)el.classList.toggle('open');}
 
 // ══ LOG ══════════════════════════════════════════════════════════════════════
 // ══ EDIT LOGGED SHOTS ════════════════════════════════════════════════════════
@@ -4276,7 +5124,7 @@ function doLog(){
   const tds=parseFloat(document.getElementById('tds-inp')?.value)||null;
   const ey=tds?(tds*(brewMode==='pourover'?PO.water:P.yield))/(brewMode==='pourover'?PO.dose:P.dose):null;
   const s=brewMode==='pourover'
-    ?{id:Date.now(),brewMode,drinkType,taste:pt,tastes:{...tastes},puck,notes:document.getElementById('notes').value,
+    ?{id:Date.now(),brewMode,poBrewer:PO.brewer,drinkType,taste:pt,tastes:{...tastes},puck,notes:document.getElementById('notes').value,
        ...JSON.parse(JSON.stringify(PO)),...JSON.parse(JSON.stringify(C)),
        grinder:RIG.grinder,ratio:(PO.water/PO.dose).toFixed(2),tds,ey,
        logDate:new Date().toLocaleDateString([],{day:'2-digit',month:'short'}),
@@ -4997,9 +5845,7 @@ function boot(){
   M.opv=RIG.opv;
   renderTasteGrid();updateChips();updateCoffeeCard();updateRefBar();updateDialinStrip();
   updateTimerDisplay(0);
-  document.getElementById('mode-esp').classList.toggle('on',brewMode==='espresso');
-  document.getElementById('mode-po').classList.toggle('on',brewMode==='pourover');
-  document.getElementById('mode-lbl').textContent=brewMode==='espresso'?'Espresso':'Pour Over';
+  setMode(brewMode);
   if(!ld('onboarded',false)&&!shots.length)document.getElementById('onboard').style.display='flex';
   setTimeout(checkOverdueReminders,1500);
   applyQuickMode();
@@ -5023,6 +5869,84 @@ function boot(){
   }
 }
 boot();
+
+// ============ MAINTENANCE REMINDERS ============
+const MAINT_DEFS=[
+ {id:'backflush',name:'Backflush machine',ico:'🚿',interval:7,note:'Water-only weekly; with espresso detergent monthly.'},
+ {id:'descale',name:'Descale machine',ico:'💧',interval:90,note:'Every 2\u20133 months \u2014 sooner with hard water.'},
+ {id:'burrs',name:'Clean grinder burrs',ico:'⚙️',interval:60,note:'Brush out the burrs and sweep the grind chamber.'},
+];
+let MAINT=ld('maint',{})||{};
+function maintStatus(def){
+  const rec=MAINT[def.id];
+  if(!rec||!rec.last)return{txt:'Not tracked yet \u2014 tap Done after your next clean',cls:'',due:false};
+  const days=Math.floor((Date.now()-rec.last)/86400000);
+  const left=(rec.interval||def.interval)-days;
+  if(left<0)return{txt:'Overdue by '+(-left)+'d',cls:'over',due:true};
+  if(left===0)return{txt:'Due today',cls:'over',due:true};
+  if(left<=3)return{txt:'Due in '+left+'d',cls:'soon',due:false};
+  return{txt:'Done '+days+'d ago \u00b7 due in '+left+'d',cls:'ok',due:false};
+}
+function maintDone(id){
+  const def=MAINT_DEFS.find(d=>d.id===id);
+  MAINT[id]={last:Date.now(),interval:(MAINT[id]&&MAINT[id].interval)||def.interval};
+  sv('maint',MAINT);renderMaint();flashToast(def.name+' logged \u2713');
+}
+function renderMaint(){
+  const host=document.getElementById('machine-content');if(!host)return;
+  let sec=document.getElementById('maint-section');
+  if(!sec){sec=document.createElement('div');sec.id='maint-section';host.appendChild(sec);}
+  sec.innerHTML='<div class="mt-card"><div class="mt-title">Maintenance</div>'
+    +'<div class="mt-sub">Scale and stale oils shift shot behaviour long before anything breaks \u2014 a clean machine keeps your dial-in honest.</div>'
+    +MAINT_DEFS.map(d=>{const s=maintStatus(d);
+      return '<div class="mt-row"><div class="mt-ico">'+d.ico+'</div><div class="mt-mid"><div class="mt-name">'+d.name+'</div><div class="mt-status '+s.cls+'">'+s.txt+'</div><div class="mt-note">'+d.note+'</div></div><button class="mt-btn" onclick="maintDone(\''+d.id+'\')">Done</button></div>';}).join('')
+    +'</div>';
+  const due=MAINT_DEFS.some(d=>maintStatus(d).due);
+  const nb=document.getElementById('nb-machine');if(nb)nb.classList.toggle('has-update',due);
+}
+// Machine view rebuilds its own HTML, so re-attach the maintenance card whenever it's shown
+const _setViewPrev=setView;
+setView=function(v){_setViewPrev(v);if(v==='machine')setTimeout(renderMaint,0);};
+renderMaint();
+
+// ============ BACKUP / RESTORE ============
+function exportData(){
+  const out={};
+  for(let i=0;i<localStorage.length;i++){
+    const k=localStorage.key(i);
+    if(k&&k.indexOf('c3_')===0)out[k]=localStorage.getItem(k);
+  }
+  const payload={app:'cejf',version:2,exported:new Date().toISOString(),data:out};
+  const blob=new Blob([JSON.stringify(payload,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='cejf-backup-'+new Date().toISOString().slice(0,10)+'.json';
+  document.body.appendChild(a);a.click();a.remove();
+  flashToast('Backup exported \u2713');
+}
+function importData(ev){
+  const f=ev.target.files&&ev.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=()=>{
+    try{
+      const j=JSON.parse(r.result);
+      const d=j.data||j;let n=0;
+      Object.keys(d).forEach(k=>{if(k.indexOf('c3_')===0){localStorage.setItem(k,d[k]);n++;}});
+      if(!n)throw new Error('no keys');
+      flashToast('Imported '+n+' items \u2014 reloading\u2026');
+      setTimeout(()=>location.reload(),900);
+    }catch(e){flashToast('Import failed \u2014 not a \u0106ejf backup file');}
+  };
+  r.readAsText(f);
+  ev.target.value='';
+}
+
+
+
+
+
+
+
 </script>
 </body>
 </html>
