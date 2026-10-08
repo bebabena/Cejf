@@ -1,7 +1,7 @@
 /* Ćejf service worker: the app works offline.
    Pages: network first, so a new version shows up on the next launch; the cached copy is the fallback.
    Icons and the manifest: cache first. Bump CACHE with every release. */
-const CACHE = 'cejf-v7';
+const CACHE = 'cejf-v8';
 const ASSETS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './favicon.svg', './apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
